@@ -13,10 +13,10 @@ StartupEvents.registry("block", (event) => {
     .survive((state, level, pos) => {
       return level.getBlockState(pos.below()).block.id != "minecraft:air";
     })
-    .growTick(() => 300)
+    .growTick(() => 100)
     .dropSeed(false)
     //.crop("kubejs:small_azalea_leaf")
     .item((seedItem) => {
       seedItem.texture("minecraft:item/carrot");
-    }).blockstateJson = blockstate("zodiac:block/carrot/", "age", 3);
+    }).blockstateJson = blockstate("zodiac:block/carrot/", "age", 4);
 });
