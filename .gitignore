@@ -179,3 +179,6 @@ kubejs/jsconfig.json
 kubejs/config/probejs.json
 kubejs/config/probe-settings.json
 kubejs/client_scripts/jsconfig.json
+kubejs/.client.log.lnk
+kubejs/.server.log.lnk
+kubejs/.startup.log.lnk
