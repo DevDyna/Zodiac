@@ -1,6 +1,6 @@
 // priority: 0
 
-BlockEvents.broken("kubejs:azalea", (event) => {
+let azalea = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
   if (age == 7) {
     for (let i = 0; i < rnd(0, 3); i++) {
@@ -10,25 +10,48 @@ BlockEvents.broken("kubejs:azalea", (event) => {
   if (age >= 3) {
     event.block.popItem("minecraft:stick");
   }
-  event.block.popItem("minecraft:flower_pot");
-  event.block.popItem("kubejs:azalea_seeds");
-});
+};
 
-BlockEvents.rightClicked("kubejs:azalea", (event) => {
+let carrot = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
-  if (age == 7) {
-    event.player.swing();
+  if (age == 3) {
     for (let i = 0; i < rnd(0, 3); i++) {
-      event.block.popItem("kubejs:small_azalea_leaf");
+      event.block.popItem("kubejs:carrot");
     }
-    event.block.popItem("minecraft:stick");
-    event.block.set("kubejs:azalea");
   }
-});
+};
 
-BlockEvents.rightClicked("minecraft:flower_pot", (event) => {
-  if (event.item == "kubejs:azalea_seeds") {
-    event.player.swing();
-    event.block.set("kubejs:azalea");
-  }
-});
+potEvents(
+  "kubejs:azalea",
+  "kubejs:azalea_seeds",
+  "minecraft:flower_pot",
+  azalea
+);
+
+potEvents(
+  "kubejs:carrot",
+  "kubejs:carrot_seeds",
+  "minecraft:flower_pot",
+  carrot
+);
+
+function potEvents(id, item_seed, basePot, dropEvent) {
+  //break event
+  BlockEvents.broken(id, (event) => {
+    dropEvent(event);
+    event.block.popItem(basePot);
+    event.block.popItem(item_seed);
+  });
+  //fast harvest event
+  BlockEvents.rightClicked(id, (event) => {
+    dropEvent(event);
+    event.block.set(id);
+  });
+  //planting event
+  BlockEvents.rightClicked(basePot, (event) => {
+    if (event.item == item_seed) {
+      event.player.swing();
+      event.block.set(id);
+    }
+  });
+}
