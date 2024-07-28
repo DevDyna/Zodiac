@@ -182,3 +182,4 @@ kubejs/client_scripts/jsconfig.json
 kubejs/.client.log.lnk
 kubejs/.server.log.lnk
 kubejs/.startup.log.lnk
+config/defaultworldtype/world-presets.txt
