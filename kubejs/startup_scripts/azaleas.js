@@ -21,6 +21,6 @@ StartupEvents.registry("block", (event) => {
     .dropSeed(false)
     //.crop("kubejs:small_azalea_leaf")
     .item((seedItem) => {
-      seedItem.texture("minecraft:block/azalea");
+      seedItem.parentModel("minecraft:item/azalea");
     }).blockstateJson = blockstate("zodiac:block/azalea/", "age", 8);
 });
