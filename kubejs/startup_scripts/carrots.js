@@ -16,6 +16,6 @@ StartupEvents.registry("block", (event) => {
     .growTick(() => 300)
     .dropSeed(false)
     .item((seedItem) => {
-      seedItem.texture("zodiac:item/carrot_on_pot");
+      seedItem.parentModel("zodiac:block/carrot/age3");
     }).blockstateJson = blockstate("zodiac:block/carrot/", "age", 4);
 });
