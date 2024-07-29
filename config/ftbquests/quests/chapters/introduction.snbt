@@ -6,6 +6,115 @@
 	id: "41D28090ADC72328"
 	order_index: 0
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			id: "4FB569AA6F3D2EF9"
+			tasks: [{
+				id: "7E9CEE52D8592CB4"
+				item: "minecraft:flower_pot"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4FB569AA6F3D2EF9"]
+			id: "06B4DC8EBCB46CB0"
+			tasks: [{
+				id: "6DA1FF20D088D9C1"
+				item: "kubejs:carrot_seeds"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4FB569AA6F3D2EF9"]
+			id: "35715F6A2C85ABAB"
+			tasks: [{
+				id: "55890E045D195FF3"
+				item: "kubejs:azalea_seeds"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["06B4DC8EBCB46CB0"]
+			id: "068EB18F01BABB13"
+			tasks: [{
+				id: "524EC8DE31B84963"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["35715F6A2C85ABAB"]
+			id: "5813F9EE757AB383"
+			tasks: [{
+				id: "322984F0FDF27A7C"
+				item: "kubejs:small_azalea_leaf"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["35715F6A2C85ABAB"]
+			id: "702D6727C7EB9390"
+			tasks: [{
+				id: "1ECB1089BE93390A"
+				item: "minecraft:stick"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			id: "08CF1595995CD71A"
+			tasks: [{
+				id: "682D121A033C0D83"
+				item: "minecraft:dirt"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["08CF1595995CD71A"]
+			id: "7D15F7234EBAFB74"
+			tasks: [{
+				id: "0C2D5CB6FA0FFE3D"
+				item: "minecraft:rooted_dirt"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["08CF1595995CD71A"]
+			id: "18F6712752F98342"
+			tasks: [{
+				id: "3603E091B0D3D5D2"
+				item: "kubejs:stone_pebble"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7D15F7234EBAFB74"]
+			id: "22C3B2049FC79496"
+			tasks: [{
+				id: "32FA239C54B7CAB1"
+				item: "kubejs:small_azalea_roots"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.0d
+		}
+	]
 	title: "introduction"
 }
