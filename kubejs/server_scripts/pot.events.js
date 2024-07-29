@@ -16,7 +16,7 @@ let carrot = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
   if (age == 3) {
     for (let i = 0; i < rnd(0, 3); i++) {
-      event.block.popItem("kubejs:carrot");
+      event.block.popItem("minecraft:carrot");
     }
   }
 };
