@@ -13,7 +13,7 @@ StartupEvents.registry("block", (event) => {
     .survive((state, level, pos) => {
       return level.getBlockState(pos.below()).block.id != "minecraft:air";
     })
-    .growTick(() => 100)
+    .growTick(() => 300)
     .dropSeed(false)
     .item((seedItem) => {
       seedItem.texture("minecraft:item/carrot");
