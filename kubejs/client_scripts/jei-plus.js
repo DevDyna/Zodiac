@@ -9,7 +9,7 @@ JEIAddedEvents.registerCategories((event) => {
     } = category;
     category
       //https://github.com/mezz/JustEnoughItems/blob/1.20.1/CommonApi/src/main/java/mezz/jei/api/helpers/IGuiHelper.java
-      .title("Click on a Block")
+      .title("Click on Block")
       .background(
         guiHelper.createDrawable(
           "zodiac:textures/gui/click_event.png",
@@ -262,10 +262,10 @@ JEIAddedEvents.registerRecipes((event) => {
     output: "minecraft:dirt",
   });
 
-
+  //rooted dirt
   event.custom("zodiac:random-tick-below").add({
-    input: { top: "kubejs:azalea", below: "kubejs:azalea" },
-    output: { top: "minecraft:stone", below: "minecraft:rooted_dirt" },
+    input: { top: "kubejs:azalea_seed", below: "minecraft:dirt" },
+    output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
   });
 });
 
