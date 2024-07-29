@@ -25,28 +25,28 @@ JEIAddedEvents.registerCategories((event) => {
       //---------------------------------------------------------------------//
       .isRecipeHandled((recipe) => {
         return !!(
-          recipe?.data?.inputs?.main_hand !== undefined &&
-          recipe?.data?.inputs?.off_hand !== undefined &&
-          recipe?.data?.inputs?.block !== undefined &&
-          recipe?.data?.outputs?.block_replace !== undefined &&
-          recipe?.data?.outputs?.drop !== undefined
+          recipe?.data?.input?.main_hand !== undefined &&
+          recipe?.data?.input?.off_hand !== undefined &&
+          recipe?.data?.input?.block !== undefined &&
+          recipe?.data?.output?.block_replace !== undefined &&
+          recipe?.data?.output?.drop !== undefined
         );
       })
       //---------------------------------------------------------------------//
       //                            SLOT IO                                  //
       //---------------------------------------------------------------------//
       .handleLookup((builder, recipe, focuses) => {
-        verify(recipe.data.inputs.main_hand, "INPUT", 35, 16, builder);
-        verify(recipe.data.inputs.off_hand, "INPUT", 2, 51, builder);
-        verify(recipe.data.inputs.block, "INPUT", 35, 82, builder);
-        verify(recipe.data.outputs.block_replace, "OUTPUT", 88, 22, builder);
+        verify(recipe.data.input.main_hand, "INPUT", 35, 16, builder);
+        verify(recipe.data.input.off_hand, "INPUT", 2, 51, builder);
+        verify(recipe.data.input.block, "INPUT", 35, 82, builder);
+        verify(recipe.data.output.block_replace, "OUTPUT", 88, 22, builder);
 
         let slotSize = 21;
 
         for (let i = 0; i < 3; i++) {
           for (let j = 0; j < 3; j++) {
             verify(
-              recipe.data.outputs.drop[j * 3 + i],
+              recipe.data.output.drop[j * 3 + i],
               "OUTPUT",
               67 + i * slotSize,
               61 + j * slotSize,
@@ -154,7 +154,7 @@ JEIAddedEvents.registerCategories((event) => {
       jeiHelpers: { guiHelper },
     } = category;
     category
-      .title("Random Tick Conversion")
+      .title("Conversion with condition - below")
       .background(
         guiHelper.createDrawable(
           "zodiac:textures/gui/randomtick/block_top.png",
@@ -205,31 +205,67 @@ JEIAddedEvents.registerCategories((event) => {
 });
 
 JEIAddedEvents.registerRecipes((event) => {
+
+  //azalea click
   event.custom("zodiac:click-event").add({
-    inputs: {
-      main_hand: "minecraft:stick",
-      off_hand: "minecraft:dirt",
-      block: "minecraft:stone",
+    input: {
+      main_hand: 'kubejs:azalea_seeds',
+      off_hand : '',
+      block: 'minecraft:flower_pot',
     },
-    outputs: {
-      block_replace: "minecraft:cobblestone",
-      drop: ["minecraft:diamond"],
+    output: {
+      block_replace: 'kubejs:azalea_seed',
+      drop: [],
+    },
+  });
+  //azalea harvest
+  event.custom("zodiac:click-event").add({
+    input: {
+      main_hand : '',
+      off_hand : '',
+      block: 'kubejs:azalea_seed',
+    },
+    output: {
+      block_replace: 'kubejs:azalea_seed',
+      drop: ['kubejs:small_azalea_leaf', 'minecraft:stick'],
     },
   });
 
+  //carrot click
+  event.custom("zodiac:click-event").add({
+    input: {
+      main_hand: 'kubejs:carrot_seeds',
+      off_hand : '',
+      block: 'minecraft:flower_pot',
+    },
+    output: {
+      block_replace: 'kubejs:carrot_seed',
+      drop: [],
+    },
+  });
+  //carrot harvest
+  event.custom("zodiac:click-event").add({
+    input: {
+      main_hand : '',
+      off_hand : '',
+      block: 'kubejs:carrot_seed',
+    },
+    output: {
+      block_replace: 'kubejs:carrot_seed',
+      drop: ['minecraft:carrot'],
+    },
+  });
+
+  //DEMO
   event.custom("zodiac:random-tick-basic").add({
-    input: "minecraft:stone",
+    input: "minecraft:mud",
     output: "minecraft:dirt",
   });
 
-  event.custom("zodiac:random-tick-basic").add({
-    input: "minecraft:stone",
-    output: "minecraft:dirt",
-  });
 
   event.custom("zodiac:random-tick-below").add({
-    input: { top: "minecraft:stone", below: "minecraft:dirt" },
-    output: { top: "minecraft:stone", below: "minecraft:dirt" },
+    input: { top: "kubejs:azalea", below: "kubejs:azalea" },
+    output: { top: "minecraft:stone", below: "minecraft:rooted_dirt" },
   });
 });
 
