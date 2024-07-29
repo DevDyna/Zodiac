@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/flower_pot_cross",
+  "parent": "zodiac:block/carrot/flower_pot_cross",
   "textures": {
     "plant": "minecraft:block/carrots_stage3"
   }
