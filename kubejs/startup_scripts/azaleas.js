@@ -17,7 +17,7 @@ StartupEvents.registry("block", (event) => {
     .survive((state, level, pos) => {
       return level.getBlockState(pos.below()).block.id != "minecraft:air";
     })
-    .growTick(() => 300)
+    .growTick(() => 600)
     .dropSeed(false)
     //.crop("kubejs:small_azalea_leaf")
     .item((seedItem) => {
