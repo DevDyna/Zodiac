@@ -285,18 +285,6 @@ JEIAddedEvents.registerRecipes((event) => {
       drop: [],
     },
   });
-  //azalea harvest
-  event.custom("zodiac:click-event").add({
-    input: {
-      main_hand: "",
-      off_hand: "",
-      block: "kubejs:azalea_seed",
-    },
-    output: {
-      block_replace: "kubejs:azalea_seed",
-      drop: ["kubejs:small_azalea_leaf", "minecraft:stick"],
-    },
-  });
 
   //carrot click
   event.custom("zodiac:click-event").add({
@@ -308,18 +296,6 @@ JEIAddedEvents.registerRecipes((event) => {
     output: {
       block_replace: "kubejs:carrot_seed",
       drop: [],
-    },
-  });
-  //carrot harvest
-  event.custom("zodiac:click-event").add({
-    input: {
-      main_hand: "",
-      off_hand: "",
-      block: "kubejs:carrot_seed",
-    },
-    output: {
-      block_replace: "kubejs:carrot_seed",
-      drop: ["minecraft:carrot"],
     },
   });
 
@@ -335,10 +311,19 @@ JEIAddedEvents.registerRecipes((event) => {
     output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
   });
 
+  //crop result
   event.custom("zodiac:crop-result").add({
     input: "kubejs:azalea_seed",
     output: ["kubejs:small_azalea_leaf", "minecraft:stick"],
   });
+
+  event.custom("zodiac:crop-result").add({
+    input: "kubejs:carrot_seed",
+    output: ["minecraft:carrot"],
+  })
+
+
+
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
