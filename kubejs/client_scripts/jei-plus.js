@@ -157,7 +157,7 @@ JEIAddedEvents.registerCategories((event) => {
       .title("Conversion with condition - below")
       .background(
         guiHelper.createDrawable(
-          "zodiac:textures/gui/randomtick/block_top.png",
+          "zodiac:textures/gui/randomtick/block_below.png",
           2,
           2,
           90,
@@ -202,57 +202,124 @@ JEIAddedEvents.registerCategories((event) => {
     // );
     //---------------------------------------------------------------------//
   });
+
+  //---------------------------------------------------------------------------------------//
+  //                                       CROP RESULT                                     //
+  //---------------------------------------------------------------------------------------//
+
+  event.custom("zodiac:crop-result", (category) => {
+    const {
+      jeiHelpers,
+      jeiHelpers: { guiHelper },
+    } = category;
+    category
+      .title("Conversion with condition - below")
+      .background(
+        guiHelper.createDrawable(
+          "zodiac:textures/gui/crop_result.png",
+          2,
+          2,
+          96,
+          136
+        )
+      )
+      .icon(guiHelper.createDrawableItemStack(Item.of("dirt")))
+      //---------------------------------------------------------------------//
+      //                            SLOT VALIDATOR                           //
+      //---------------------------------------------------------------------//
+      .isRecipeHandled((recipe) => {
+        return !!(
+          recipe?.data?.input !== undefined &&
+          recipe?.data?.output !== undefined
+        );
+      })
+      //---------------------------------------------------------------------//
+      //                            SLOT IO                                  //
+      //---------------------------------------------------------------------//
+      .handleLookup((builder, recipe, focuses) => {
+        verify(recipe.data.input, "INPUT", 37, 8, builder);
+
+        let slotSize = 21;
+
+        for (let i = 0; i < 4; i++) {
+          for (let j = 0; j < 4; j++) {
+            verify(
+              recipe.data.output[j * 4 + i],
+              "OUTPUT",
+              6 + i * slotSize,
+              47 + j * slotSize,
+              builder
+            );
+          }
+        }
+      });
+    //---------------------------------------------------------------------//
+    //                            TEXT DRAWING                             //
+    //---------------------------------------------------------------------//
+    // .setDrawHandler(
+    //   (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
+    //     guiGraphics.drawWordWrap(
+    //       Client.font,
+    //       Text.of(convertString("block placed below")).bold(),
+    //       31,
+    //       4,
+    //       100,
+    //       0
+    //     );
+    //   }
+    // );
+    //---------------------------------------------------------------------//
+  });
 });
 
 JEIAddedEvents.registerRecipes((event) => {
-
   //azalea click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: 'kubejs:azalea_seeds',
-      off_hand : '',
-      block: 'minecraft:flower_pot',
+      main_hand: "kubejs:azalea_seeds",
+      off_hand: "",
+      block: "minecraft:flower_pot",
     },
     output: {
-      block_replace: 'kubejs:azalea_seed',
+      block_replace: "kubejs:azalea_seed",
       drop: [],
     },
   });
   //azalea harvest
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand : '',
-      off_hand : '',
-      block: 'kubejs:azalea_seed',
+      main_hand: "",
+      off_hand: "",
+      block: "kubejs:azalea_seed",
     },
     output: {
-      block_replace: 'kubejs:azalea_seed',
-      drop: ['kubejs:small_azalea_leaf', 'minecraft:stick'],
+      block_replace: "kubejs:azalea_seed",
+      drop: ["kubejs:small_azalea_leaf", "minecraft:stick"],
     },
   });
 
   //carrot click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: 'kubejs:carrot_seeds',
-      off_hand : '',
-      block: 'minecraft:flower_pot',
+      main_hand: "kubejs:carrot_seeds",
+      off_hand: "",
+      block: "minecraft:flower_pot",
     },
     output: {
-      block_replace: 'kubejs:carrot_seed',
+      block_replace: "kubejs:carrot_seed",
       drop: [],
     },
   });
   //carrot harvest
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand : '',
-      off_hand : '',
-      block: 'kubejs:carrot_seed',
+      main_hand: "",
+      off_hand: "",
+      block: "kubejs:carrot_seed",
     },
     output: {
-      block_replace: 'kubejs:carrot_seed',
-      drop: ['minecraft:carrot'],
+      block_replace: "kubejs:carrot_seed",
+      drop: ["minecraft:carrot"],
     },
   });
 
@@ -266,6 +333,11 @@ JEIAddedEvents.registerRecipes((event) => {
   event.custom("zodiac:random-tick-below").add({
     input: { top: "kubejs:azalea_seed", below: "minecraft:dirt" },
     output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
+  });
+
+  event.custom("zodiac:crop-result").add({
+    input: "kubejs:azalea_seed",
+    output: ["kubejs:small_azalea_leaf", "minecraft:stick"],
   });
 });
 
