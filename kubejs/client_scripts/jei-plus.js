@@ -213,7 +213,7 @@ JEIAddedEvents.registerCategories((event) => {
       jeiHelpers: { guiHelper },
     } = category;
     category
-      .title("Conversion with condition - below")
+      .title("Crop Result")
       .background(
         guiHelper.createDrawable(
           "zodiac:textures/gui/crop_result.png",
