@@ -189,3 +189,4 @@ config/skyblockbuilder/starter_inventory.json5
 config/skyblockbuilder/spawn.json5
 config/skyblockbuilder/structures.json5
 config/skyblockbuilder/world.json5
+config/simpletomb.toml
