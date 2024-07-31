@@ -16,6 +16,6 @@ StartupEvents.registry("item", (event) => {
   event.create("kubejs:small_azalea_roots").texture("zodiac:item/small_azalea_roots");
   event.create("kubejs:small_azalea_leaf").texture("zodiac:item/small_azalea_leaf");
   event.create("kubejs:azalea_seeds").texture("zodiac:item/azalea_seeds");
-  event.create("kubejs:carrot_seeds").texture("zodiac:item/carrot_seeds");
-  
+  event.create("kubejs:carrot_seeds").texture("zodiac:item/carrot_seeds")
+  event.create('kubejs:fire_starter').texture('minecraft:item/flint')
 });
