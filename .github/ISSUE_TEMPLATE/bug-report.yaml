@@ -1,0 +1,66 @@
+name: Bug Report
+description: Have you found a bug ? Squash it!
+labels: [bug, need support]
+assignees: DevDyna
+body:
+  - type: checkboxes
+    id: new-issue
+    attributes:
+      label: Core Section
+      description: Biip Boop , Something happen !
+      options:
+        - label: I have searched on opened [issues](https://github.com/DevDyna/IronBerry/issues) and [discussions](https://github.com/DevDyna/IronBerry/discussions) of this repository
+          required: true
+        - label: I'm using the latest version of this project
+          required: true
+
+          
+          
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Blup Blup , We are on deep !
+      options:
+        - Singleplayer/Local | NO LAN
+        - Multiplayer        | LAN
+        - Multiplayer        | Dedicated server
+    validations:
+      required: true
+        
+  - type: input
+    id: version
+    attributes:
+      label: Modpack Version
+      placeholder: ex. 0.7c
+      description: Insert a valid version (beta and releases allowed)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what happen to you
+      placeholder: sqrt(-1) - sqrt(i) = -0,707106781 + 0,292893219 i
+    validations:
+      required: true
+      
+      
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Procedure
+      description: Describe layer by layer about how to reproduce it (please not from prehistory to now , only basics..)
+      placeholder: f(x y)=log z
+    validations:
+      required: true
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Additional things
+      description: Anything else , included videos , gifs , screenshots and more..
+      placeholder: ln x- ln y
+    validations:
+      required: true
