@@ -296,6 +296,7 @@ JEIAddedEvents.registerRecipeCatalysts((event) => {
 });
 
 JEIAddedEvents.registerRecipes((event) => {
+
   //azalea click
   event.custom("zodiac:click-event").add({
     input: {
@@ -325,6 +326,8 @@ JEIAddedEvents.registerRecipes((event) => {
       isCrouching: false,
     },
   });
+
+
 
   //DEMO
   event.custom("zodiac:random-tick-basic").add({
