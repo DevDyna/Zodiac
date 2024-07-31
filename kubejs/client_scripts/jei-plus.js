@@ -62,7 +62,19 @@ JEIAddedEvents.registerCategories((event) => {
         (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
           for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-              if (recipe.data.output.chance[j * 3 + i] !== undefined) {
+              if (recipe.data.output.chance[j * 3 + i] === undefined && recipe.data.output.drop[j * 3 + i] !== undefined) {
+                guiGraphics.drawWordWrap(
+                  Client.font,
+                  Text.of(
+                    convertString("100%")
+                  ),
+                  68 + i * 21,
+                  72 + j * 21,
+                  20,
+                  20
+                );
+              }
+              if (recipe.data.output.drop[j * 3 + i] !== undefined) {
                 guiGraphics.drawWordWrap(
                   Client.font,
                   Text.of(
