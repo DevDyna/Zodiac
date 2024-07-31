@@ -29,7 +29,9 @@ JEIAddedEvents.registerCategories((event) => {
           recipe?.data?.input?.off_hand !== undefined &&
           recipe?.data?.input?.block !== undefined &&
           recipe?.data?.output?.block_replace !== undefined &&
-          recipe?.data?.output?.drop !== undefined
+          recipe?.data?.output?.drop !== undefined &&
+          recipe?.data?.output?.chance !== undefined &&
+          recipe?.data?.output?.isCrouching !== undefined
         );
       })
       //---------------------------------------------------------------------//
@@ -41,15 +43,13 @@ JEIAddedEvents.registerCategories((event) => {
         verify(recipe.data.input.block, "INPUT", 35, 82, builder);
         verify(recipe.data.output.block_replace, "OUTPUT", 88, 22, builder);
 
-        let slotSize = 21;
-
         for (let i = 0; i < 3; i++) {
           for (let j = 0; j < 3; j++) {
             verify(
               recipe.data.output.drop[j * 3 + i],
               "OUTPUT",
-              67 + i * slotSize,
-              61 + j * slotSize,
+              67 + i * 21,
+              61 + j * 21,
               builder
             );
           }
@@ -60,6 +60,23 @@ JEIAddedEvents.registerCategories((event) => {
       //---------------------------------------------------------------------//
       .setDrawHandler(
         (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
+          for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+              if (recipe.data.output.chance[j * 3 + i] !== undefined) {
+                guiGraphics.drawWordWrap(
+                  Client.font,
+                  Text.of(
+                    convertString(recipe.data.output.chance[j * 3 + i] + "%")
+                  ),
+                  68 + i * 21,
+                  72 + j * 21,
+                  20,
+                  20
+                );
+              }
+            }
+          }
+
           guiGraphics.drawWordWrap(
             Client.font,
             Text.of(convertString("right")).bold(),
@@ -260,16 +277,22 @@ JEIAddedEvents.registerCategories((event) => {
     //   (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
     //     guiGraphics.drawWordWrap(
     //       Client.font,
-    //       Text.of(convertString("block placed below")).bold(),
-    //       31,
-    //       4,
-    //       100,
-    //       0
+    //       Text.of(convertString("better  that  botany")).gray(),
+    //       -40,
+    //       0,
+    //       10,
+    //       200
     //     );
     //   }
     // );
     //---------------------------------------------------------------------//
   });
+});
+
+JEIAddedEvents.registerRecipeCatalysts((event) => {
+  event.data.addRecipeCatalyst("wooden_pickaxe", "zodiac:click-event");
+  event.data.addRecipeCatalyst("flower_pot", "zodiac:random-tick-basic");
+  event.data.addRecipeCatalyst("dirt", "zodiac:random-tick-below");
 });
 
 JEIAddedEvents.registerRecipes((event) => {
@@ -283,6 +306,8 @@ JEIAddedEvents.registerRecipes((event) => {
     output: {
       block_replace: "kubejs:azalea_seed",
       drop: [],
+      chance: [],
+      isCrouching: false,
     },
   });
 
@@ -296,6 +321,8 @@ JEIAddedEvents.registerRecipes((event) => {
     output: {
       block_replace: "kubejs:carrot_seed",
       drop: [],
+      chance: [],
+      isCrouching: false,
     },
   });
 
@@ -320,14 +347,9 @@ JEIAddedEvents.registerRecipes((event) => {
   event.custom("zodiac:crop-result").add({
     input: "kubejs:carrot_seed",
     output: ["minecraft:carrot"],
-  })
+  });
 
-
-
-});
-
-JEIAddedEvents.registerRecipeCatalysts((event) => {
-  event.data.addRecipeCatalyst("wooden_pickaxe", "zodiac:click-event");
-  event.data.addRecipeCatalyst("flower_pot", "zodiac:random-tick-basic");
-  event.data.addRecipeCatalyst("dirt", "zodiac:random-tick-below");
+  global.jei.recipes.click.forEach((element) => {
+    event.custom("zodiac:click-event").add(element);
+  });
 });
