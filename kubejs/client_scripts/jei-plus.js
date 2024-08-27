@@ -436,13 +436,9 @@ JEIAddedEvents.registerRecipes((event) => {
     event.custom("zodiac:click-event").add(element);
   });
 
-  event.custom("zodiac:composting").add({
-    input: "kubejs:pile_of_dirt",
-    output: ["minecraft:dirt"],
-  });
 
-  event.custom("zodiac:composting").add({
-    input: "minecraft:sand",
-    output: ["minecraft:stone", "minecraft:cobblestone"],
-  });
+  global.jei.recipes.composting.forEach(element=>{
+    event.custom("zodiac:composting").add(element);
+  })
+
 });
