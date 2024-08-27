@@ -73,9 +73,9 @@ StartupEvents.registry("block", (event) => {
             level.spawnParticles(
               "minecraft:happy_villager",
               true,
-              x + 0.1 * rnd(1, 4),
+              x + 0.5 + 0.1 * rnd(1, 4),
               y + 0.5 + 0.1 * rnd(1, 3),
-              z + 0.1 * rnd(1, 4),
+              z + 0.5 + 0.1 * rnd(1, 4),
               0,
               0,
               0,
@@ -131,15 +131,15 @@ StartupEvents.registry("block", (event) => {
         const { x, y, z } = tick.block;
         if (tick.block.properties.get("composting").toLowerCase() === "true") {
           tick.level.spawnParticles(
-            "minecraft:happy_villager",
+            "minecraft:scrape",
             true,
-            x + 0.1 * rnd(1, 9),
-            y + 1 + 0.1 * rnd(1, 5),
-            z + 0.1 * rnd(1, 9),
-            0,
-            0,
-            0,
-            10,
+            x + 0.5,
+            y + 0.5,
+            z + 0.5,
+            0.1 * rnd(0, 4),
+            0.1 * rnd(0, 4),
+            0.1 * rnd(0, 4),
+            rnd(1, 4),
             0.1
           );
         }
