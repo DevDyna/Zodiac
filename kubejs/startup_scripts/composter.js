@@ -82,7 +82,6 @@ StartupEvents.registry("block", (event) => {
             $recipe[
               Number(block.properties.get("type").toLowerCase())-1
             ].output.forEach((e) => {
-              player.tell(e)
               block.popItemFromFace(e, "up");
             });
             block.set("kubejs:composter", {
