@@ -1,6 +1,6 @@
 global.jei = {
   recipes: {
-    composter: [
+    composting: [
       // {
       //   input,
       //   output,
