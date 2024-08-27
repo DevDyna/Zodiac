@@ -79,16 +79,17 @@ StartupEvents.registry("block", (event) => {
           }
           //reset block and drop items
           if (block.properties.get("mature").toLowerCase() === "true") {
+            $recipe[
+              Number(block.properties.get("type").toLowerCase())-1
+            ].output.forEach((e) => {
+              player.tell(e)
+              block.popItemFromFace(e, "up");
+            });
             block.set("kubejs:composter", {
               type: "0",
               composting: false,
               mature: false,
               stage: "0",
-            });
-            player.tell(index)
-            player.tell(element.output)
-            element.output.forEach((e) => {
-              block.popItemFromFace(e, "up");
             });
           }
         });
