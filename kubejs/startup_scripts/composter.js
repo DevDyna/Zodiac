@@ -4,7 +4,6 @@ global.jei = {
       // {
       //   input,
       //   output,
-      //   replace,
       // },
     ],
   },
@@ -44,7 +43,7 @@ StartupEvents.registry("block", (event) => {
     .box(2, 2, 14, 16, 16, 16)
     .box(14, 2, 0, 16, 16, 14)
     .item((i) => {
-      i.parentModel("zodiac:block/crate/template/empty");
+      i.parentModel("zodiac:block/crate/template/demo");
     })
     .defaultState((state) => {
       state
@@ -150,7 +149,7 @@ StartupEvents.registry("block", (event) => {
       { apply: { model: "zodiac:block/crate/template/base" } },
       {
         when: { stage: "0", type: "0" },
-        apply: { model: "zodiac:block/crate/dirt/empty" },
+        apply: { model: "zodiac:block/crate/template/empty" },
       },
       {
         when: { stage: "0", type: "1" },
