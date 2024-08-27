@@ -22,6 +22,9 @@ function click_loot(
   isCrouching
 ) {
   BlockEvents.rightClicked(block_id, (event) => {
+    const { x, y, z } = event.block;
+    
+
     let flag_isCrouching = true;
     if (main_hand == "") {
       main_hand = "minecraft:air";
@@ -41,6 +44,8 @@ function click_loot(
     ) {
       if (rnd50()) {
         event.player.swing();
+        event.server.runCommandSilent('/particle block '+block_id+' '+x+' '+y+' '+z+' 0.75 0.75 0.75 0.3 '+rnd(10,30))
+        //need sound here
         loot.forEach((element, index) => {
           if (rndC(loot_chance[index])) {
             event.block.popItemFromFace(element, event.facing);
