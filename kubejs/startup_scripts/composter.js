@@ -3,7 +3,7 @@
 //     composting: [
 //       // {
 //       //   input,
-//       //   output,
+//       //   outputs,
 //       // },
 //     ],
 //   },
@@ -22,8 +22,10 @@ StartupEvents.registry("block", (event) => {
     .box(0, 2, 2, 2, 16, 16)
     .box(2, 2, 14, 16, 16, 16)
     .box(14, 2, 0, 16, 16, 14)
-    .item((i) => {
-      i.parentModel("zodiac:block/crate/template/demo");
+    .item((item) => {
+      item.modelJson({
+        parent: "zodiac:block/crate/template/demo",
+      });
     })
     .defaultState((state) => {
       state
@@ -56,9 +58,9 @@ StartupEvents.registry("block", (event) => {
               x + 0.5,
               y + 0.5,
               z + 0.5,
-              0.5 + 0.1 * rnd(1, 4),
-              0.5 + 0.1 * rnd(1, 4),
-              0.5 + 0.1 * rnd(1, 4),
+              0.1 * rnd(1, 4),
+              0.1 * rnd(1, 4),
+              0.1 * rnd(1, 4),
               10,
               0.1
             );
@@ -105,9 +107,9 @@ StartupEvents.registry("block", (event) => {
           x + 0.5,
           y + 0.5,
           z + 0.5,
-          0.1 * rnd(1, 7),
-          0.1 * rnd(1, 7),
-          0.1 * rnd(1, 7),
+          0.1 * rnd(1, 2),
+          0.1 * rnd(1, 2),
+          0.1 * rnd(1, 2),
           rnd(1, 4),
           0.1
         );
@@ -120,7 +122,7 @@ StartupEvents.registry("block", (event) => {
       }
     })
     .blockEntity((be) => {
-      be.clientTick(5, 0, (tick) => {
+      be.serverTick(5, 0, (tick) => {
         const { x, y, z } = tick.block;
         if (tick.block.properties.get("composting").toLowerCase() === "true") {
           tick.level.spawnParticles(
@@ -129,9 +131,9 @@ StartupEvents.registry("block", (event) => {
             x + 0.5,
             y + 0.5,
             z + 0.5,
-            0.1 * rnd(1, 7),
-            0.1 * rnd(1, 7),
-            0.1 * rnd(1, 7),
+            0.1 * rnd(1, 2),
+            0.1 * rnd(1, 2),
+            0.1 * rnd(1, 2),
             rnd(1, 4),
             0.1
           );
