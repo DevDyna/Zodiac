@@ -80,7 +80,8 @@ StartupEvents.registry("block", (event) => {
               });
             }
           }
-        } else if (block.properties.get("mature").toLowerCase() === "true") {
+        }
+        if (block.properties.get("mature").toLowerCase() === "true") {
           block.set("kubejs:composter", {
             type: "0",
             composting: false,
@@ -88,11 +89,12 @@ StartupEvents.registry("block", (event) => {
             stage: "0",
           });
           block.popItemFromFace("minecraft:dirt", "up");
-        } else event.cancel();
+        }
       }
     })
     .randomTick((tick) => {
       const { block } = tick;
+      const { x, y, z } = block;
       if (
         block.properties.get("composting").toLowerCase() === "true" &&
         rnd75()
