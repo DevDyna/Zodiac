@@ -46,18 +46,18 @@ function potEvents(id, item_seed, basePot, dropEvent) {
   BlockEvents.rightClicked(id, (event) => {
     dropEvent(event);
     const { x, y, z } = event.block;
-      event.level.spawnParticles(
-        "minecraft:scrape",
-        true,
-        x +0.5,
-        y+0.5,
-        z+0.5,
-        0.1*rnd(0,4),
-        0.1*rnd(0,4),
-        0.1*rnd(0,4),
-        rnd(1, 4),
-        0.1
-      );
+    event.level.spawnParticles(
+      "minecraft:scrape",
+      true,
+      x + 0.5,
+      y + 0.5,
+      z + 0.5,
+      0.1 * rnd(0, 4),
+      0.1 * rnd(0, 4),
+      0.1 * rnd(0, 4),
+      rnd(1, 4),
+      0.1
+    );
     event.block.set(id);
   });
   //planting event
@@ -67,16 +67,17 @@ function potEvents(id, item_seed, basePot, dropEvent) {
       event.level.spawnParticles(
         "minecraft:totem_of_undying",
         true,
-        x+0.5,
-        y+0.5,
-        z+0.5,
-        0.1*rnd(0,4),
-        0.1*rnd(0,4),
-        0.1*rnd(0,4),
+        x + 0.5,
+        y + 0.5,
+        z + 0.5,
+        0.1 * rnd(0, 4),
+        0.1 * rnd(0, 4),
+        0.1 * rnd(0, 4),
         rnd(1, 4),
         0.1
       );
       event.player.swing();
+      event.item.count--;
       event.block.set(id);
     }
   });
