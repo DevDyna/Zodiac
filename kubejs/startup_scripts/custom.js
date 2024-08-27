@@ -2,7 +2,7 @@ StartupEvents.registry("block", (event) => {
 
   function crate(name,texture){
     event.create(name).defaultCutout().modelJson = {
-      "parent": "zodiac:block/crate/template_crate",
+      "parent": "zodiac:block/crate/template/full",
       "textures": {
         "crate_top": texture,
         "crate_side": texture
