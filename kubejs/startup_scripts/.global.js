@@ -2,7 +2,15 @@
 
 Platform.mods.kubejs.name = "Zodiac Core";
 
-global.jeiItems = [];
+global.jei = {
+  recipes:{
+    click:[],
+    composter:[]
+  },
+  hide:[],
+  remove:[],
+  stage:[]
+};
 
 
 const $BooleanProperty = Java.loadClass(
@@ -81,4 +89,26 @@ let IHATEPROPERTIES = (input) => {
   let num = Number(input);
   num += 1;
   return num.toString();
+};
+
+let multipartUtils = (base_model, stage_model) => {
+  let result = { multipart: [{ apply: { model: base_model } }] };
+  let rotations = [0, 90, 180, 270];
+  let decay = [0, 1, 2, 3];
+  let obj = {};
+
+  decay.forEach((stage) => {
+    obj = {
+      when: { stage: stage },
+      apply: [],
+    };
+    rotations.forEach((rot) => {
+      obj.apply.push({
+         model: stage_model + "stage" + stage, y: rot 
+      });
+    });
+    result.multipart.push(obj);
+  });
+  console.log(result)
+  return result;
 };
