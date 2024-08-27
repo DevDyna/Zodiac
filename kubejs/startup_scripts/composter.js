@@ -1,6 +1,5 @@
 StartupEvents.registry("block", (event) => {
-
-  let $recipe = global.jei.recipes.composting
+  let $recipe = global.jei.recipes.composting;
 
   event
     .create("kubejs:composter")
@@ -38,63 +37,61 @@ StartupEvents.registry("block", (event) => {
       const { x, y, z } = block;
       if (hand == "OFF_HAND") return;
       if (hand == "MAIN_HAND") {
-        $recipe.forEach((element,index) => {
-          
-        //allow click until full
-        if (
-          item == element.input &&
-          block.properties.get("stage").toLowerCase() !== "3"
-          && block.properties.get("type").toLowerCase() == ""+(index+1)
-        ) {
-          if (!player.isCreative()) item.count--;
-          level.spawnParticles(
-            "minecraft:happy_villager",
-            true,
-            x + 0.5,
-            y + 0.5,
-            z + 0.5,
-            0.1 * rnd(1, 4),
-            0.1 * rnd(1, 4),
-            0.1 * rnd(1, 4),
-            10,
-            0.1
-          );
-          if (rnd50()) {
-
-            block.set("kubejs:composter", {
-              type: ""+(index+1),
-              composting: false,
-              mature: false,
-              stage: IHATEPROPERTIES(
-                block.properties.get("stage").toLowerCase()
-              ),
-            });
-            if (block.properties.get("stage").toLowerCase() === "3") {
+        $recipe.forEach((element, index) => {
+          //allow click until full
+          if (
+            item == element.input &&
+            block.properties.get("stage").toLowerCase() !== "3" &&
+            (block.properties.get("type").toLowerCase() == "" + (index + 1) ||
+              block.properties.get("type").toLowerCase() == "0")
+          ) {
+            if (!player.isCreative()) item.count--;
+            level.spawnParticles(
+              "minecraft:happy_villager",
+              true,
+              x + 0.5,
+              y + 0.5,
+              z + 0.5,
+              0.1 * rnd(1, 4),
+              0.1 * rnd(1, 4),
+              0.1 * rnd(1, 4),
+              10,
+              0.1
+            );
+            if (rnd50()) {
               block.set("kubejs:composter", {
-                type: ""+(index+1),
-                composting: true,
+                type: "" + (index + 1),
+                composting: false,
                 mature: false,
-                stage: "3",
+                stage: IHATEPROPERTIES(
+                  block.properties.get("stage").toLowerCase()
+                ),
               });
+              if (block.properties.get("stage").toLowerCase() === "3") {
+                block.set("kubejs:composter", {
+                  type: "" + (index + 1),
+                  composting: true,
+                  mature: false,
+                  stage: "3",
+                });
+              }
             }
           }
-        }
-        //reset block and drop items
-        if (block.properties.get("mature").toLowerCase() === "true") {
-          block.set("kubejs:composter", {
-            type: "0",
-            composting: false,
-            mature: false,
-            stage: "0",
-          });
-          $recipe[index].output.forEach(e=>{
-            block.popItemFromFace(e, "up");
-          })
-          
-        }
-
-      });
-
+          //reset block and drop items
+          if (block.properties.get("mature").toLowerCase() === "true") {
+            block.set("kubejs:composter", {
+              type: "0",
+              composting: false,
+              mature: false,
+              stage: "0",
+            });
+            player.tell(index)
+            player.tell(element.output)
+            element.output.forEach((e) => {
+              block.popItemFromFace(e, "up");
+            });
+          }
+        });
       }
     })
     .randomTick((tick) => {
@@ -149,7 +146,7 @@ StartupEvents.registry("block", (event) => {
         when: { stage: "0", type: "0" },
         apply: { model: "zodiac:block/crate/template/empty" },
       },
-//--------------------------------------------------------------//
+      //--------------------------------------------------------------//
       {
         when: { stage: "0", type: "1" },
         apply: { model: "zodiac:block/crate/dirt/stage0" },
@@ -166,7 +163,7 @@ StartupEvents.registry("block", (event) => {
         when: { stage: "3", type: "1" },
         apply: { model: "zodiac:block/crate/dirt/stage3" },
       },
-//--------------------------------------------------------------//
+      //--------------------------------------------------------------//
       {
         when: { stage: "0", type: "2" },
         apply: { model: "zodiac:block/crate/cobblestone/stage0" },
@@ -183,7 +180,7 @@ StartupEvents.registry("block", (event) => {
         when: { stage: "3", type: "2" },
         apply: { model: "zodiac:block/crate/cobblestone/stage3" },
       },
-//--------------------------------------------------------------//
+      //--------------------------------------------------------------//
     ],
   };
 });
