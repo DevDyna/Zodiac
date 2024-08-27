@@ -62,12 +62,13 @@ JEIAddedEvents.registerCategories((event) => {
         (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
           for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-              if (recipe.data.output.chance[j * 3 + i] === undefined && recipe.data.output.drop[j * 3 + i] !== undefined) {
+              if (
+                recipe.data.output.chance[j * 3 + i] === undefined &&
+                recipe.data.output.drop[j * 3 + i] !== undefined
+              ) {
                 guiGraphics.drawWordWrap(
                   Client.font,
-                  Text.of(
-                    convertString("100%")
-                  ),
+                  Text.of(convertString("100%")),
                   68 + i * 21,
                   72 + j * 21,
                   20,
@@ -275,8 +276,8 @@ JEIAddedEvents.registerCategories((event) => {
             verify(
               recipe.data.output[j * 4 + i],
               "OUTPUT",
-              6 + i * slotSize,
-              47 + j * slotSize,
+              63 + i * slotSize,
+              37 + j * slotSize,
               builder
             );
           }
@@ -299,16 +300,85 @@ JEIAddedEvents.registerCategories((event) => {
     // );
     //---------------------------------------------------------------------//
   });
+
+  //---------------------------------------------------------------------------------------//
+  //                                       COMPOSTING                                       //
+  //---------------------------------------------------------------------------------------//
+
+  event.custom("zodiac:composting", (category) => {
+    const {
+      jeiHelpers,
+      jeiHelpers: { guiHelper },
+    } = category;
+    category
+      .title("Random Tick Conversion")
+      .background(
+        guiHelper.createDrawable(
+          "zodiac:textures/gui/specific/composter.png",
+          2,
+          2,
+          116,
+          92
+        )
+      )
+      .icon(guiHelper.createDrawableItemStack(Item.of("clock")))
+      //---------------------------------------------------------------------//
+      //                            SLOT VALIDATOR                           //
+      //---------------------------------------------------------------------//
+      .isRecipeHandled((recipe) => {
+        return !!(
+          recipe?.data?.input !== undefined &&
+          recipe?.data?.output !== undefined
+        );
+      })
+      //---------------------------------------------------------------------//
+      //                            SLOT IO                                  //
+      //---------------------------------------------------------------------//
+      .handleLookup((builder, recipe, focuses) => {
+        verify(recipe.data.input, "INPUT", 15, 6, builder);
+
+        let slotSize = 21;
+        let size = 2;
+
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j < size; j++) {
+            verify(
+              recipe.data.output[j * size + i],
+              "OUTPUT",
+              60 + i * slotSize,
+              40 + j * slotSize,
+              builder
+            );
+          }
+        }
+      });
+    //---------------------------------------------------------------------//
+    //                            TEXT DRAWING                             //
+    //---------------------------------------------------------------------//
+    // .setDrawHandler(
+    //   (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
+    //     guiGraphics.drawWordWrap(
+    //       Client.font,
+    //       Text.of(convertString("right")).bold(),
+    //       31,
+    //       4,
+    //       100,
+    //       0
+    //     );
+    //   }
+    // );
+    //---------------------------------------------------------------------//
+  });
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
-  event.data.addRecipeCatalyst("wooden_pickaxe", "zodiac:click-event");
-  event.data.addRecipeCatalyst("flower_pot", "zodiac:random-tick-basic");
-  event.data.addRecipeCatalyst("dirt", "zodiac:random-tick-below");
+  event.data.addRecipeCatalyst("minecraft:wooden_pickaxe", "zodiac:click-event");
+  event.data.addRecipeCatalyst("minecraft:flower_pot", "zodiac:random-tick-basic");
+  event.data.addRecipeCatalyst("minecraft:dirt", "zodiac:random-tick-below");
+  event.data.addRecipeCatalyst("kubejs:composter", "zodiac:composting");
 });
 
 JEIAddedEvents.registerRecipes((event) => {
-
   //azalea click
   event.custom("zodiac:click-event").add({
     input: {
@@ -339,8 +409,6 @@ JEIAddedEvents.registerRecipes((event) => {
     },
   });
 
-
-
   //DEMO
   event.custom("zodiac:random-tick-basic").add({
     input: "minecraft:mud",
@@ -366,5 +434,15 @@ JEIAddedEvents.registerRecipes((event) => {
 
   global.jei.recipes.click.forEach((element) => {
     event.custom("zodiac:click-event").add(element);
+  });
+
+  event.custom("zodiac:composting").add({
+    input: "kubejs:pile_of_dirt",
+    output: ["minecraft:dirt"],
+  });
+
+  event.custom("zodiac:composting").add({
+    input: "minecraft:sand",
+    output: ["minecraft:stone", "minecraft:cobblestone"],
   });
 });
