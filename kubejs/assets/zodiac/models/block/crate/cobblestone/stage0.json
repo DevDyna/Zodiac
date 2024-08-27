@@ -1,0 +1,6 @@
+{
+    "parent": "zodiac:block/crate/template/stage0",
+    "textures": {
+        "soil": "minecraft:block/cobblestone"
+    }
+}
