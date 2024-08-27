@@ -18,6 +18,7 @@ StartupEvents.registry("block", (event) => {
         parent: "zodiac:block/crate/template/item/demo",
       });
     })
+    
     .defaultState((state) => {
       state
         .set($BooleanProperty.create("composting"), false)
