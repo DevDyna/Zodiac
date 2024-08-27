@@ -2,17 +2,6 @@
 
 Platform.mods.kubejs.name = "Zodiac Core";
 
-// global.jei = {
-//   recipes:{
-//     click:[],
-//     composting:[]
-//   },
-//   hide:[],
-//   remove:[],
-//   stage:[]
-// };
-
-
 const $BooleanProperty = Java.loadClass(
   "net.minecraft.world.level.block.state.properties.BooleanProperty"
 );
