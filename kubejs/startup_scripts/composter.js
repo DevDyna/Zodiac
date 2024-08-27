@@ -1,35 +1,15 @@
-global.jei = {
-  recipes: {
-    composting: [
-      // {
-      //   input,
-      //   output,
-      // },
-    ],
-  },
-};
+// global.jei = {
+//   recipes: {
+//     composting: [
+//       // {
+//       //   input,
+//       //   output,
+//       // },
+//     ],
+//   },
+// };
 
 StartupEvents.registry("block", (event) => {
-  // event
-  //   .create("kubejs:composter")
-  //   .model("zodiac:block/crate/template/empty")
-  //   .displayName("Empty Composter")
-  //   .rightClick((click) => {
-  //     const { player, item, block, hand } = click;
-  //     if (hand == "OFF_HAND") return;
-  //     if (hand == "MAIN_HAND") {
-  //       if (item == "kubejs:pile_of_dirt") {
-  //         player.swing();
-  //         if (!player.isCreative()) item.count--;
-  //         block.set("kubejs:composter");
-  //       }
-  //     }
-  //   })
-  //   .item((i) => {
-  //     i.parentModel("zodiac:block/crate/template/empty");
-  //   });
-
-  //function createComposter(name, soilItem, texture) {}
   event
     .create("kubejs:composter")
     .property($BooleanProperty.create("composting"))
@@ -60,7 +40,7 @@ StartupEvents.registry("block", (event) => {
         .set($IntegerProperty.create("type", 0, 9), 0);
     })
     .rightClick((click) => {
-      const { item, block, hand, facing, player, level } = click;
+      const { item, block, hand, player, level } = click;
       const { x, y, z } = block;
       if (hand == "OFF_HAND") return;
       if (hand == "MAIN_HAND") {
@@ -73,12 +53,12 @@ StartupEvents.registry("block", (event) => {
             level.spawnParticles(
               "minecraft:happy_villager",
               true,
-              x + 0.5 + 0.1 * rnd(1, 4),
-              y + 0.5 + 0.1 * rnd(1, 3),
-              z + 0.5 + 0.1 * rnd(1, 4),
-              0,
-              0,
-              0,
+              x + 0.5,
+              y + 0.5,
+              z + 0.5,
+              0.5 + 0.1 * rnd(1, 4),
+              0.5 + 0.1 * rnd(1, 4),
+              0.5 + 0.1 * rnd(1, 4),
               10,
               0.1
             );
@@ -100,24 +80,35 @@ StartupEvents.registry("block", (event) => {
               });
             }
           }
-        }
-        if (block.properties.get("mature").toLowerCase() === "true") {
+        } else if (block.properties.get("mature").toLowerCase() === "true") {
           block.set("kubejs:composter", {
             type: "0",
             composting: false,
             mature: false,
             stage: "0",
           });
-          block.popItemFromFace("minecraft:dirt", facing);
-        }
+          block.popItemFromFace("minecraft:dirt", "up");
+        } else event.cancel();
       }
     })
     .randomTick((tick) => {
       const { block } = tick;
       if (
         block.properties.get("composting").toLowerCase() === "true" &&
-        rnd25()
+        rnd75()
       ) {
+        tick.level.spawnParticles(
+          "minecraft:scrape",
+          true,
+          x + 0.5,
+          y + 0.5,
+          z + 0.5,
+          0.1 * rnd(1, 7),
+          0.1 * rnd(1, 7),
+          0.1 * rnd(1, 7),
+          rnd(1, 4),
+          0.1
+        );
         block.set("kubejs:composter", {
           type: "1",
           composting: false,
@@ -136,9 +127,9 @@ StartupEvents.registry("block", (event) => {
             x + 0.5,
             y + 0.5,
             z + 0.5,
-            0.1 * rnd(0, 4),
-            0.1 * rnd(0, 4),
-            0.1 * rnd(0, 4),
+            0.1 * rnd(1, 7),
+            0.1 * rnd(1, 7),
+            0.1 * rnd(1, 7),
             rnd(1, 4),
             0.1
           );
