@@ -194,7 +194,7 @@ JEIAddedEvents.registerCategories((event) => {
           58
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("dirt")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("oak_leaves")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -276,8 +276,8 @@ JEIAddedEvents.registerCategories((event) => {
             verify(
               recipe.data.output[j * 4 + i],
               "OUTPUT",
-              63 + i * slotSize,
-              37 + j * slotSize,
+              6 + i * slotSize,
+              47 + j * slotSize,
               builder
             );
           }
@@ -311,7 +311,7 @@ JEIAddedEvents.registerCategories((event) => {
       jeiHelpers: { guiHelper },
     } = category;
     category
-      .title("Random Tick Conversion")
+      .title("Composting")
       .background(
         guiHelper.createDrawable(
           "zodiac:textures/gui/specific/composter.png",
@@ -345,8 +345,8 @@ JEIAddedEvents.registerCategories((event) => {
             verify(
               recipe.data.output[j * size + i],
               "OUTPUT",
-              60 + i * slotSize,
-              40 + j * slotSize,
+              64 + i * slotSize,
+              38 + j * slotSize,
               builder
             );
           }
