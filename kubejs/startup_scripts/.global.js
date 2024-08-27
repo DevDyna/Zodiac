@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 100
 
 Platform.mods.kubejs.name = "Zodiac Core";
 
