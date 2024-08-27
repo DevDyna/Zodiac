@@ -44,6 +44,7 @@ StartupEvents.registry("block", (event) => {
         if (
           item == element.input &&
           block.properties.get("stage").toLowerCase() !== "3"
+          && block.properties.get("type").toLowerCase() == ""+(index+1)
         ) {
           if (!player.isCreative()) item.count--;
           level.spawnParticles(
@@ -86,7 +87,7 @@ StartupEvents.registry("block", (event) => {
             mature: false,
             stage: "0",
           });
-          element.output.forEach(e=>{
+          $recipe[index].output.forEach(e=>{
             block.popItemFromFace(e, "up");
           })
           
