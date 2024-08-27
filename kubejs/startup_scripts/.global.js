@@ -3,10 +3,6 @@
 Platform.mods.kubejs.name = "Zodiac Core";
 
 global.jei = {
-  recipes:{
-    click:[],
-    composter:[]
-  },
   hide:[],
   remove:[],
   stage:[]
