@@ -1,0 +1,30 @@
+{
+    "credit": "Made with Blockbench",
+    "parent": "zodiac:block/crate/template/base",
+    "textures": {
+        "particle": "farmersdelight:block/crate_bottom",
+        "base_crate_bottom": "farmersdelight:block/crate_bottom"
+    },
+    "elements": [{
+            "from": [2, 0, 2],
+            "to": [14, 1, 14],
+            "rotation": {
+                "angle": 0,
+                "axis": "y",
+                "origin": [6, 8, 8]
+            },
+            "faces": {
+                "up": {
+                    "uv": [0, 0, 16, 16],
+                    "rotation": 270,
+                    "texture": "#base_crate_bottom"
+                },
+                "down": {
+                    "uv": [2, 2, 14, 14],
+                    "rotation": 90,
+                    "texture": "#base_crate_bottom"
+                }
+            }
+        }
+    ]
+}
