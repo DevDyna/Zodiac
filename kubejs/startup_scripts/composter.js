@@ -1,57 +1,64 @@
+global.jei = {
+  recipes: {
+    composter: [
+      // {
+      //   input,
+      //   output,
+      //   replace,
+      // },
+    ],
+  },
+};
+
 StartupEvents.registry("block", (event) => {
-  event
-    .create("kubejs:composter")
-    .box(0, 0, 0, 16, 2, 16)
-    .box(0, 2, 0, 14, 16, 2)
-    .box(0, 2, 2, 2, 16, 16)
-    .box(2, 2, 14, 16, 16, 16)
-    .box(14, 2, 0, 16, 16, 14)
-    .defaultCutout()
-    .displayName("Empty Composter")
-    .rightClick((click) => {
-      const { player, item, block, hand } = click;
-      if (hand == "OFF_HAND") return;
-      if (hand == "MAIN_HAND") {
-        if (item == "kubejs:pile_of_dirt") {
-          player.swing();
-          if (!player.isCreative()) item.count--;
-          block.set("kubejs:composter_dirt");
-        }
-      }
-    })
-    .item((i) => {
-      i.parentModel("zodiac:block/template/crate_empty");
-    }).modelJson = {
-    parent: "zodiac:block/crate/template/crate_empty",
-  };
+  // event
+  //   .create("kubejs:composter")
+  //   .model("zodiac:block/crate/template/empty")
+  //   .displayName("Empty Composter")
+  //   .rightClick((click) => {
+  //     const { player, item, block, hand } = click;
+  //     if (hand == "OFF_HAND") return;
+  //     if (hand == "MAIN_HAND") {
+  //       if (item == "kubejs:pile_of_dirt") {
+  //         player.swing();
+  //         if (!player.isCreative()) item.count--;
+  //         block.set("kubejs:composter");
+  //       }
+  //     }
+  //   })
+  //   .item((i) => {
+  //     i.parentModel("zodiac:block/crate/template/empty");
+  //   });
 
   //function createComposter(name, soilItem, texture) {}
   event
-    .create("kubejs:composter_dirt")
+    .create("kubejs:composter")
     .property($BooleanProperty.create("composting"))
     .property($BooleanProperty.create("mature"))
     .property($IntegerProperty.create("stage", 0, 3))
+    .property($IntegerProperty.create("type", 0, 9))
     .defaultCutout()
     .box(0, 0, 0, 16, 2, 16)
     .box(0, 2, 0, 14, 16, 2)
     .box(0, 2, 2, 2, 16, 16)
     .box(2, 2, 14, 16, 16, 16)
     .box(14, 2, 0, 16, 16, 14)
-
     .item((i) => {
-      i.parentModel("zodiac:block/crate/dirt/stage2");
+      i.parentModel("zodiac:block/crate/template/empty");
     })
     .defaultState((state) => {
       state
         .set($BooleanProperty.create("composting"), false)
         .set($BooleanProperty.create("mature"), false)
-        .set($IntegerProperty.create("stage", 0, 3), 0);
+        .set($IntegerProperty.create("stage", 0, 3), 0)
+        .set($IntegerProperty.create("type", 0, 9), 0);
     })
     .placementState((state) => {
       state
         .set($BooleanProperty.create("composting"), false)
         .set($BooleanProperty.create("mature"), false)
-        .set($IntegerProperty.create("stage", 0, 3), 0);
+        .set($IntegerProperty.create("stage", 0, 3), 0)
+        .set($IntegerProperty.create("type", 0, 9), 0);
     })
     .rightClick((click) => {
       const { item, block, hand, facing, player, level } = click;
@@ -77,7 +84,8 @@ StartupEvents.registry("block", (event) => {
               0.1
             );
 
-            block.set("kubejs:composter_dirt", {
+            block.set("kubejs:composter", {
+              type: "1",
               composting: false,
               mature: false,
               stage: IHATEPROPERTIES(
@@ -85,7 +93,8 @@ StartupEvents.registry("block", (event) => {
               ),
             });
             if (block.properties.get("stage").toLowerCase() === "3") {
-              block.set("kubejs:composter_dirt", {
+              block.set("kubejs:composter", {
+                type: "1",
                 composting: true,
                 mature: false,
                 stage: "3",
@@ -94,7 +103,12 @@ StartupEvents.registry("block", (event) => {
           }
         }
         if (block.properties.get("mature").toLowerCase() === "true") {
-          block.set("kubejs:composter");
+          block.set("kubejs:composter", {
+            type: "0",
+            composting: false,
+            mature: false,
+            stage: "0",
+          });
           block.popItemFromFace("minecraft:dirt", facing);
         }
       }
@@ -105,7 +119,8 @@ StartupEvents.registry("block", (event) => {
         block.properties.get("composting").toLowerCase() === "true" &&
         rnd25()
       ) {
-        block.set("kubejs:composter_dirt", {
+        block.set("kubejs:composter", {
+          type: "1",
           composting: false,
           mature: true,
           stage: "3",
@@ -131,11 +146,28 @@ StartupEvents.registry("block", (event) => {
         }
       });
     }).blockstateJson = {
-    variants: {
-      "stage=0": { model: "zodiac:block/crate/dirt/stage0" },
-      "stage=1": { model: "zodiac:block/crate/dirt/stage1" },
-      "stage=2": { model: "zodiac:block/crate/dirt/stage2" },
-      "stage=3": { model: "zodiac:block/crate/dirt/stage3" },
-    },
+    multipart: [
+      { apply: { model: "zodiac:block/crate/template/base" } },
+      {
+        when: { stage: "0", type: "0" },
+        apply: { model: "zodiac:block/crate/dirt/empty" },
+      },
+      {
+        when: { stage: "0", type: "1" },
+        apply: { model: "zodiac:block/crate/dirt/stage0" },
+      },
+      {
+        when: { stage: "1", type: "1" },
+        apply: { model: "zodiac:block/crate/dirt/stage1" },
+      },
+      {
+        when: { stage: "2", type: "1" },
+        apply: { model: "zodiac:block/crate/dirt/stage2" },
+      },
+      {
+        when: { stage: "3", type: "1" },
+        apply: { model: "zodiac:block/crate/dirt/stage3" },
+      },
+    ],
   };
 });
