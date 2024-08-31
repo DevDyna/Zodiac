@@ -130,13 +130,7 @@ JEIAddedEvents.registerCategories((event) => {
     category
       .title("Random Tick Conversion")
       .background(
-        guiHelper.createDrawable(
-          "zodiac:textures/gui/randomtick/basic.png",
-          2,
-          2,
-          90,
-          32
-        )
+        guiHelper.createDrawable("zodiac:textures/gui/basic.png", 2, 2, 90, 32)
       )
       .icon(guiHelper.createDrawableItemStack(Item.of("flower_pot")))
       //---------------------------------------------------------------------//
@@ -186,7 +180,7 @@ JEIAddedEvents.registerCategories((event) => {
       .title("Conversion with condition")
       .background(
         guiHelper.createDrawable(
-          "zodiac:textures/gui/randomtick/block_below.png",
+          "zodiac:textures/gui/block_below.png",
           2,
           2,
           90,
@@ -248,35 +242,46 @@ JEIAddedEvents.registerCategories((event) => {
           "zodiac:textures/gui/crop_result.png",
           2,
           2,
-          96,
-          136
+          148,
+          52
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("dirt")))
+      .icon(guiHelper.createDrawableItemStack("kubejs:azalea_seed"))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
       .isRecipeHandled((recipe) => {
         return !!(
           recipe?.data?.input !== undefined &&
-          recipe?.data?.output !== undefined
+          recipe?.data?.output?.id !== undefined &&
+          recipe?.data?.output?.tip !== undefined
         );
       })
       //---------------------------------------------------------------------//
       //                            SLOT IO                                  //
       //---------------------------------------------------------------------//
       .handleLookup((builder, recipe, focuses) => {
-        verify(recipe.data.input, "INPUT", 37, 8, builder);
+        verify(recipe.data.input, "INPUT", 10, 15, builder);
 
         let slotSize = 21;
-
-        for (let i = 0; i < 4; i++) {
-          for (let j = 0; j < 4; j++) {
-            verify(
-              recipe.data.output[j * 4 + i],
+        let slotX = 4;
+        let slotY = 2;
+        let tip
+        for (let i = 0; i < slotY; i++) {
+          for (let j = 0; j < slotX; j++) {
+            tip = recipe.data.output.tip[j * slotX + i]
+            verifyCrude(
+              Item.of(
+                recipe.data.output.id[j * slotX + i],
+                `{display:{Lore:['{\"text\":\"` +
+                  (recipe.data.output.tip[j * slotX + i] == undefined &&
+                    recipe.data.output.id[j * slotX + i] != undefined)
+                  ? "NAN"
+                  : tip`\"}']}}`
+              ),
               "OUTPUT",
-              6 + i * slotSize,
-              47 + j * slotSize,
+              51 + i * slotSize,
+              4 + j * slotSize,
               builder
             );
           }
@@ -313,7 +318,7 @@ JEIAddedEvents.registerCategories((event) => {
       .title("Composting")
       .background(
         guiHelper.createDrawable(
-          "zodiac:textures/gui/specific/composter.png",
+          "zodiac:textures/gui/composter.png",
           2,
           2,
           116,
@@ -381,7 +386,7 @@ JEIAddedEvents.registerCategories((event) => {
       .title("Block Drop")
       .background(
         guiHelper.createDrawable(
-          "zodiac:textures/gui/crop_result.png",
+          "zodiac:textures/gui/block_result.png",
           2,
           2,
           96,
@@ -404,13 +409,11 @@ JEIAddedEvents.registerCategories((event) => {
       //---------------------------------------------------------------------//
       .handleLookup((builder, recipe, focuses) => {
         verify(recipe.data.input, "INPUT", 37, 8, builder);
-        //Item.of('minecraft:stone', "{display:{Lore:['{\"text\":\"a\"}']}}")
         let slotSize = 21;
-        let tooltip;
+        
         for (let i = 0; i < 4; i++) {
           for (let j = 0; j < 4; j++) {
-            tooltip = recipe.data.output.count[j * 4 + i];
-
+            let tip = recipe.data.output.count[j * 4 + i]
             verifyCrude(
               Item.of(
                 recipe.data.output.id[j * 4 + i],
@@ -418,7 +421,7 @@ JEIAddedEvents.registerCategories((event) => {
                   (recipe.data.output.count[j * 4 + i] == undefined &&
                     recipe.data.output.id[j * 4 + i] != undefined)
                   ? 1
-                  : tooltip`\"}']}}`
+                  : tip`\"}']}}`
               ),
               "OUTPUT",
               6 + i * slotSize,
@@ -472,6 +475,7 @@ JEIAddedEvents.registerRecipeCatalysts((event) => {
 });
 
 JEIAddedEvents.registerRecipes((event) => {
+  //--------HARDCODED-RECIPES--------//
   //azalea click
   event.custom("zodiac:click-event").add({
     input: {
@@ -502,27 +506,22 @@ JEIAddedEvents.registerRecipes((event) => {
     },
   });
 
-  //mud to clay
-  event.custom("zodiac:random-tick-basic").add({
-    input: "minecraft:mud",
-    output: "minecraft:clay",
-  });
-
   //rooted dirt
   event.custom("zodiac:random-tick-below").add({
     input: { top: "kubejs:azalea_seed", below: "minecraft:dirt" },
     output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
   });
 
-  //crop result
-  event.custom("zodiac:crop-result").add({
-    input: "kubejs:azalea_seed",
-    output: ["kubejs:small_azalea_leaf", "minecraft:stick"],
+  //mud to clay
+  event.custom("zodiac:random-tick-basic").add({
+    input: "minecraft:mud",
+    output: "minecraft:clay",
   });
 
-  event.custom("zodiac:crop-result").add({
-    input: "kubejs:carrot_seed",
-    output: ["minecraft:carrot"],
+  //---------------------------------//
+
+  global.jei.recipes.crop_result.forEach((element) => {
+    event.custom("zodiac:crop-result").add(element);
   });
 
   global.jei.recipes.click.forEach((element) => {
