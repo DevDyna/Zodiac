@@ -21,7 +21,7 @@ StartupEvents.registry("item", (event) => {
   event.create("kubejs:fire_starter").texture("minecraft:item/flint");
 
   event
-    .create("paxel", "paxel")
+    .create("kubejs:paxel", "paxel")
     .parentModel("zodiac:item/paxel")
     .unstackable()
     .texture("zodiac:item/paxel")
@@ -33,5 +33,5 @@ StartupEvents.registry("item", (event) => {
     .tag("forge:tools/pickaxes")
     .tag("forge:pickaxes");
 
-
+  //event.create("kubejs:big_stick").texture("minecraft:stick");
 });
