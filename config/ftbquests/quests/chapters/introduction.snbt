@@ -3,30 +3,1695 @@
 	default_quest_shape: ""
 	filename: "introduction"
 	group: ""
+	icon: "kubejs:composter"
 	id: "41D28090ADC72328"
+	images: [
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log_top"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -9.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -8.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -7.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -6.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -5.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -5.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -6.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -7.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -8.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -9.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log_top"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log_top"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log_top"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -26.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -14.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -13.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -12.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -11.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -10.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -10.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -11.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -12.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -13.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -14.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 0.0d
+			width: 1.25d
+			x: -4.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -14.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -13.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -12.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -11.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -10.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -9.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -8.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -5.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -6.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -7.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -15.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -16.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -17.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -18.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -18.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -17.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -16.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -15.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -15.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -18.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -17.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -16.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -19.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -20.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -21.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -22.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -23.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -24.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -25.0d
+			y: -5.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -19.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -20.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -21.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -22.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -23.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -24.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/oak_log"
+			rotation: 90.0d
+			width: 1.25d
+			x: -25.0d
+			y: 2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -19.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -20.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -21.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -22.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -23.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: -4.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: -3.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: -2.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: -1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: -0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: 0.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -24.0d
+			y: 1.5d
+		}
+		{
+			height: 1.25d
+			image: "minecraft:block/bricks"
+			rotation: 0.0d
+			width: 1.25d
+			x: -25.0d
+			y: 1.5d
+		}
+	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
 			id: "4FB569AA6F3D2EF9"
-			tasks: [{
-				id: "7E9CEE52D8592CB4"
-				item: "minecraft:flower_pot"
+			rewards: [{
+				id: "03E3D3FCF8538020"
+				item: {
+					Count: 1
+					id: "kubejs:paxel"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["4FB569AA6F3D2EF9"]
-			id: "06B4DC8EBCB46CB0"
+			shape: "gear"
+			size: 3.0d
 			tasks: [{
-				id: "6DA1FF20D088D9C1"
-				item: "kubejs:carrot_seeds"
-				type: "item"
+				icon: "kubejs:azalea_seed"
+				id: "5BE7F4DEA6D58526"
+				observe_type: 0
+				timer: 0L
+				to_observe: "kubejs:azalea"
+				type: "observation"
 			}]
-			x: -2.0d
-			y: 1.0d
+			title: "Where is my tree !"
+			x: -24.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["4FB569AA6F3D2EF9"]
@@ -36,30 +1701,8 @@
 				item: "kubejs:azalea_seeds"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["06B4DC8EBCB46CB0"]
-			id: "068EB18F01BABB13"
-			tasks: [{
-				id: "524EC8DE31B84963"
-				item: "minecraft:carrot"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["35715F6A2C85ABAB"]
-			id: "5813F9EE757AB383"
-			tasks: [{
-				id: "322984F0FDF27A7C"
-				item: "kubejs:small_azalea_leaf"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 3.0d
+			x: -24.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["35715F6A2C85ABAB"]
@@ -69,52 +1712,251 @@
 				item: "minecraft:stick"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 3.0d
+			x: -13.0d
+			y: -4.0d
 		}
 		{
-			id: "08CF1595995CD71A"
-			tasks: [{
-				id: "682D121A033C0D83"
-				item: "minecraft:dirt"
-				type: "item"
-			}]
-			x: 3.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["08CF1595995CD71A"]
-			id: "7D15F7234EBAFB74"
-			tasks: [{
-				id: "0C2D5CB6FA0FFE3D"
-				item: "minecraft:rooted_dirt"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["08CF1595995CD71A"]
+			dependencies: ["4733BA37D10B7DAA"]
 			id: "18F6712752F98342"
 			tasks: [{
 				id: "3603E091B0D3D5D2"
 				item: "kubejs:stone_pebble"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -0.5d
+			x: -15.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["7D15F7234EBAFB74"]
+			dependencies: ["4733BA37D10B7DAA"]
 			id: "22C3B2049FC79496"
 			tasks: [{
 				id: "32FA239C54B7CAB1"
 				item: "kubejs:small_azalea_roots"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 1.0d
+			x: -23.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6C9A28F51F7BFC0A"]
+			id: "3C139C8670C6E9B9"
+			tasks: [
+				{
+					icon: "farmersdelight:stove"
+					id: "211DB751BF07CFDB"
+					observe_type: 0
+					timer: 0L
+					to_observe: "farmersdelight:stove"
+					type: "observation"
+				}
+				{
+					icon: "farmersdelight:cooking_pot"
+					id: "23F6F5165EC80E66"
+					observe_type: 0
+					timer: 0L
+					to_observe: "farmersdelight:cooking_pot"
+					type: "observation"
+				}
+			]
+			x: -10.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["334C2E85FB313F32"]
+			id: "77EC37FF99528BCD"
+			tasks: [{
+				id: "7E0709BC5CBA1A56"
+				item: "kubejs:composter"
+				type: "item"
+			}]
+			x: -12.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"18F6712752F98342"
+				"77EC37FF99528BCD"
+			]
+			id: "6C9A28F51F7BFC0A"
+			tasks: [{
+				id: "6BB28C4CFF5BEB58"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			x: -12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4733BA37D10B7DAA"]
+			id: "792A98FB0CA6054A"
+			tasks: [{
+				id: "40ECA9188C70E85F"
+				item: {
+					Count: 1
+					id: "aquaculture:worm"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -15.5d
+			y: 0.5d
+		}
+		{
+			id: "4733BA37D10B7DAA"
+			tasks: [
+				{
+					icon: "minecraft:rooted_dirt"
+					id: "0E835F249FB69CA9"
+					observe_type: 0
+					timer: 0L
+					to_observe: "minecraft:rooted_dirt"
+					type: "observation"
+				}
+				{
+					icon: "minecraft:dirt"
+					id: "2B5BAFCAE757CBDD"
+					observe_type: 0
+					timer: 0L
+					to_observe: "minecraft:dirt"
+					type: "observation"
+				}
+			]
+			title: "I have found some dirts"
+			x: -24.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["3C139C8670C6E9B9"]
+			id: "2CFBB1E875E774D5"
+			tasks: [{
+				id: "4AE3C953E3216DF6"
+				item: "minecraft:stone"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			hide: true
+			hide_dependency_lines: false
+			id: "1735D43186CB4366"
+			shape: "gear"
+			size: 3.0d
+			tasks: [
+				{
+					id: "3560C4FEBB9B7971"
+					item: "terraqueous:craftbench"
+					type: "item"
+				}
+				{
+					id: "2E83D217B4085B75"
+					item: "terraqueous:craftfurnace"
+					type: "item"
+				}
+			]
+			title: "StonyTables"
+			x: -6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["702D6727C7EB9390"]
+			id: "26EA226F2CCD2B46"
+			tasks: [{
+				id: "7E36C5FF43264C29"
+				item: "aquaculture:driftwood"
+				type: "item"
+			}]
+			x: -11.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["26EA226F2CCD2B46"]
+			id: "334C2E85FB313F32"
+			tasks: [{
+				id: "313EFB0D2D09948C"
+				item: "minecraft:oak_planks"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["4733BA37D10B7DAA"]
+			id: "17C2852C94131440"
+			subtitle: "My new colony"
+			tasks: [{
+				id: "61662D84793500F5"
+				item: "anthillinside:ants"
+				type: "item"
+			}]
+			x: -24.5d
+			y: 1.5d
+		}
+		{
+			id: "50E883884A3DFE63"
+			tasks: [{
+				id: "2BBCDACEF69162A2"
+				item: "kubejs:small_azalea_leaf"
+				type: "item"
+			}]
+			x: -18.5d
+			y: -0.5d
+		}
+		{
+			id: "64FB1BECA1A1A55D"
+			tasks: [{
+				id: "2D41C6C42420F662"
+				item: "minecraft:clay"
+				type: "item"
+			}]
+			x: -17.0d
+			y: -2.0d
+		}
+		{
+			id: "0373161D768A71A2"
+			tasks: [{
+				id: "6914D0B568FBA79A"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			x: -16.0d
+			y: 4.0d
+		}
+		{
+			id: "0738BEC6FA7566B2"
+			tasks: [{
+				icon: "kubejs:firepit"
+				id: "4FAC88ECCD93232C"
+				observe_type: 0
+				timer: 0L
+				to_observe: "kubejs:firepit"
+				type: "observation"
+			}]
+			x: -14.0d
+			y: 4.0d
+		}
+		{
+			id: "4BA190564D04891D"
+			tasks: [{
+				id: "7C79C03BEFB331C4"
+				item: "kubejs:muddy_dirt"
+				type: "item"
+			}]
+			x: -19.0d
+			y: 4.0d
+		}
+		{
+			id: "2F1C61DEF300435C"
+			tasks: [{
+				id: "3D10E0DA050D5740"
+				item: "kubejs:gravelly_dirt"
+				type: "item"
+			}]
+			x: -20.5d
+			y: 4.0d
 		}
 	]
-	title: "introduction"
+	title: "age 0"
 }
