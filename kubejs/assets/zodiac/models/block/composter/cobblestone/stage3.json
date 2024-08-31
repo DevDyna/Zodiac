@@ -1,5 +1,5 @@
 {
-    "parent": "zodiac:block/crate/template/stage3",
+    "parent": "zodiac:block/composter/template/stage3",
     "textures": {
         "soil": "minecraft:block/cobblestone"
     }

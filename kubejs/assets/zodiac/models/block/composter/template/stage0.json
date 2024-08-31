@@ -1,13 +1,13 @@
 {
     "credit": "Made with Blockbench",
-    "parent": "zodiac:block/crate/template/base",
+    "parent": "zodiac:block/composter/template/base",
     "textures": {
         "particle": "farmersdelight:block/crate_bottom",
         "base_crate_bottom": "farmersdelight:block/crate_bottom"
     },
     "elements": [{
             "from": [2, 0, 2],
-            "to": [14, 4, 14],
+            "to": [14, 2, 14],
             "rotation": {
                 "angle": 0,
                 "axis": "y",
