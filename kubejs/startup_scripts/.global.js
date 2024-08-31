@@ -44,36 +44,6 @@ let blockstate = (url, state, size) => {
   return result;
 };
 
-let campfireState = () => {
-  let result = { variants: {} };
-  let bool = [true, false];
-  let decay = [0, 1, 2, 3];
-  let faces = ["south", "west", "north", "east"];
-  let rotations = [0, 90, 180, 270];
-  let model = "";
-
-  faces.forEach((face, index) => {
-    bool.forEach((lit) => {
-      decay.forEach((dec) => {
-        if (!lit) {
-          model = "minecraft:block/campfire_off";
-        } else if (decay == 3) {
-          model = "zodiac:block/campfire_burnout";
-        } else {
-          model = "minecraft:block/campfire";
-        }
-
-        result.variants["facing=" + face + ",lit=" + lit + ",decay=" + dec] = {
-          model: model,
-          y: rotations[index],
-        };
-      });
-    });
-  });
-
-  return result;
-};
-
 let IHATEPROPERTIES = (input) => {
   let num = Number(input);
   num += 1;
