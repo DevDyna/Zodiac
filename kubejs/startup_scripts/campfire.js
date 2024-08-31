@@ -105,7 +105,7 @@ StartupEvents.registry("block", (event) => {
     })
     .item((item) => {
       item.modelJson({
-        parent: "minecraft:item/campfire",
+        parent: "zodiac:block/campfire_burnout",
       });
     }).blockstateJson = campfireState();
 });
