@@ -1957,6 +1957,16 @@
 			x: -20.5d
 			y: 4.0d
 		}
+		{
+			id: "499FFCB2EC645EB9"
+			tasks: [{
+				id: "75D576D8CBD2DBD6"
+				item: "minecraft:mud"
+				type: "item"
+			}]
+			x: -22.5d
+			y: 3.5d
+		}
 	]
 	title: "age 0"
 }
