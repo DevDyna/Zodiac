@@ -44,3 +44,11 @@ function convertString(input) {
       builder.addSlot(type, x, y).addItemStack(Item.of("minecraft:air"));
     }
   };
+
+  let verifyCrude = (what, type, x, y, builder) => {
+    if (what != "minecraft:air" && what != undefined && what != null) {
+      builder.addSlot(type, x, y).addItemStack(what);
+    } else {
+      builder.addSlot(type, x, y).addItemStack(Item.of("minecraft:air"));
+    }
+  };
