@@ -15,10 +15,10 @@ StartupEvents.registry("block", (event) => {
     .box(14, 2, 0, 16, 16, 14)
     .item((item) => {
       item.modelJson({
-        parent: "zodiac:block/crate/template/item/demo",
+        parent: "zodiac:block/composter/template/item/block",
       });
     })
-    
+
     .defaultState((state) => {
       state
         .set($BooleanProperty.create("composting"), false)
@@ -60,7 +60,7 @@ StartupEvents.registry("block", (event) => {
               0.1
             );
             if (rnd50()) {
-              block.set("kubejs:composter", {
+              block.set(block.id, {
                 type: "" + (index + 1),
                 composting: false,
                 mature: false,
@@ -69,7 +69,7 @@ StartupEvents.registry("block", (event) => {
                 ),
               });
               if (block.properties.get("stage").toLowerCase() === "3") {
-                block.set("kubejs:composter", {
+                block.set(block.id, {
                   type: "" + (index + 1),
                   composting: true,
                   mature: false,
@@ -81,11 +81,11 @@ StartupEvents.registry("block", (event) => {
           //reset block and drop items
           if (block.properties.get("mature").toLowerCase() === "true") {
             $recipe[
-              Number(block.properties.get("type").toLowerCase())-1
+              Number(block.properties.get("type").toLowerCase()) - 1
             ].output.forEach((e) => {
               block.popItemFromFace(e, "up");
             });
-            block.set("kubejs:composter", {
+            block.set(block.id, {
               type: "0",
               composting: false,
               mature: false,
@@ -114,7 +114,7 @@ StartupEvents.registry("block", (event) => {
           rnd(1, 4),
           0.1
         );
-        block.set("kubejs:composter", {
+        block.set(block.id, {
           type: block.properties.get("type").toLowerCase(),
           composting: false,
           mature: true,
@@ -142,44 +142,44 @@ StartupEvents.registry("block", (event) => {
       });
     }).blockstateJson = {
     multipart: [
-      { apply: { model: "zodiac:block/crate/template/base" } },
+      { apply: { model: "zodiac:block/composter/template/base" } },
       {
         when: { stage: "0", type: "0" },
-        apply: { model: "zodiac:block/crate/template/empty" },
+        apply: { model: "zodiac:block/composter/template/empty" },
       },
       //--------------------------------------------------------------//
       {
         when: { stage: "0", type: "1" },
-        apply: { model: "zodiac:block/crate/dirt/stage0" },
+        apply: { model: "zodiac:block/composter/dirt/stage0" },
       },
       {
         when: { stage: "1", type: "1" },
-        apply: { model: "zodiac:block/crate/dirt/stage1" },
+        apply: { model: "zodiac:block/composter/dirt/stage1" },
       },
       {
         when: { stage: "2", type: "1" },
-        apply: { model: "zodiac:block/crate/dirt/stage2" },
+        apply: { model: "zodiac:block/composter/dirt/stage2" },
       },
       {
         when: { stage: "3", type: "1" },
-        apply: { model: "zodiac:block/crate/dirt/stage3" },
+        apply: { model: "zodiac:block/composter/dirt/stage3" },
       },
       //--------------------------------------------------------------//
       {
         when: { stage: "0", type: "2" },
-        apply: { model: "zodiac:block/crate/cobblestone/stage0" },
+        apply: { model: "zodiac:block/composter/cobblestone/stage0" },
       },
       {
         when: { stage: "1", type: "2" },
-        apply: { model: "zodiac:block/crate/cobblestone/stage1" },
+        apply: { model: "zodiac:block/composter/cobblestone/stage1" },
       },
       {
         when: { stage: "2", type: "2" },
-        apply: { model: "zodiac:block/crate/cobblestone/stage2" },
+        apply: { model: "zodiac:block/composter/cobblestone/stage2" },
       },
       {
         when: { stage: "3", type: "2" },
-        apply: { model: "zodiac:block/crate/cobblestone/stage3" },
+        apply: { model: "zodiac:block/composter/cobblestone/stage3" },
       },
       //--------------------------------------------------------------//
     ],
