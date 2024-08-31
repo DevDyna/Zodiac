@@ -2,7 +2,7 @@
 
 StartupEvents.registry("block", (event) => {
   event
-    .create("kubejs:campfire", "cardinal")
+    .create("kubejs:firepit", "cardinal")
     .property($BooleanProperty.create("lit"))
     .property($IntegerProperty.create("decay", 0, 3))
     .defaultCutout()
