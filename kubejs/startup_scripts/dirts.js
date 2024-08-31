@@ -49,5 +49,5 @@ StartupEvents.registry("block", (event) => {
     .requiresTool(false)
     .randomTick((tick) => {
       if (rnd75()) tick.block.set("minecraft:clay");
-    });
+    })
 });
