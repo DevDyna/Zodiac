@@ -43,15 +43,26 @@ global.jei = {
         input: {
           main_hand: "",
           off_hand: "",
-          block: 'kubejs:muddy_dirt',
+          block: "kubejs:muddy_dirt",
         },
         output: {
-          block_replace: 'minecraft:dirt',
-          drop: [
-            "minecraft:clay_ball"
-          ],
+          block_replace: "minecraft:dirt",
+          drop: ["minecraft:clay_ball"],
           chance: [25],
           isCrouching: true,
+        },
+      },
+      {
+        input: {
+          main_hand: "minecraft:stick",
+          off_hand: "minecraft:stick",
+          block: "minecraft:oak_planks",
+        },
+        output: {
+          block_replace: "kubejs:firepit",
+          drop: [],
+          chance: [],
+          isCrouching: false,
         },
       },
     ],
@@ -65,22 +76,34 @@ global.jei = {
         output: ["minecraft:cobblestone"],
       },
     ],
-    blockdrop : [
+    blockdrop: [
       {
-        input:'minecraft:clay',
-        output:{
-        id:['minecraft:clay_ball'],
-        count:[4],
-        }
+        input: "minecraft:clay",
+        output: {
+          id: ["minecraft:clay_ball"],
+          count: [4],
+        },
       },
       {
-        input:'minecraft:stone',
-        output:{
-        id:['minecraft:stone'],
-        count:[],
-        }
-      }
-    ]
-  
+        input: "minecraft:stone",
+        output: {
+          id: ["minecraft:stone"],
+          count: [],
+        },
+      },
+    ],
+    crop_result: [
+      {
+        input: "kubejs:azalea_seed",
+        output: {
+          id: ["kubejs:small_azalea_leaf", "minecraft:stick"],
+          tip: ["1-3", "1"],
+        },
+      },
+      {
+        input: "kubejs:carrot_seed",
+        output: { id: ["minecraft:carrot"], tip: ["1-3"] },
+      },
+    ],
   },
 };
