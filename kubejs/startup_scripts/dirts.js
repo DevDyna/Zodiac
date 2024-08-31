@@ -1,9 +1,9 @@
 StartupEvents.registry("block", (event) => {
   event
     .create("minecraft:dirt")
-    .soundType("rooted_dirt") // Set a material (affects the sounds and some properties)
-    .hardness(0.5) // Set hardness (affects mining time)
-    .resistance(0.5) // Set resistance (to explosions, etc)
+    .soundType("rooted_dirt")
+    .hardness(0.5)
+    .resistance(0.5)
     .requiresTool(false)
     .randomTick((tick) => {
       const faces = [
@@ -39,5 +39,15 @@ StartupEvents.registry("block", (event) => {
           }
         });
       }
+    });
+
+  event
+    .create("minecraft:mud")
+    .soundType("rooted_dirt")
+    .hardness(0.5)
+    .resistance(0.5)
+    .requiresTool(false)
+    .randomTick((tick) => {
+      if (rnd75()) tick.block.set("minecraft:clay");
     });
 });
