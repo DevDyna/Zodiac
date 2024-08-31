@@ -36,6 +36,16 @@ ServerEvents.recipes((event) => {
     shapex(list, output);
   };
 
+  let rstick = (input, output) => {
+    let list = [];
+    list.push(input);
+    list.push(null);
+    list.push(null);
+    list.push(input);
+
+    shapex(list, output);
+  };
+
   less("aquaculture:driftwood", "2x minecraft:oak_planks");
 
   shapex(
@@ -60,10 +70,9 @@ ServerEvents.recipes((event) => {
     "kubejs:barrel"
   );
 
-  shapex(
-    ["aquaculture:worm", null, null, "kubejs:composter"],
-    "kubejs:composter"
-  );
+  shapex(["aquaculture:worm", null, null, "kubejs:barrel"], "kubejs:composter");
 
-  r22("kubejs:pile_of_dirt", "kubejs:muddy_dirt", "kubejs:small_azalea_roots");
+  r22("kubejs:pile_of_dirt", "minecraft:mud", "kubejs:small_azalea_roots");
+
+  //rstick('minecraft:stick','kubejs:big_stick')
 });
