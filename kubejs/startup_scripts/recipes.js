@@ -10,8 +10,12 @@ global.jei = {
         },
         output: {
           block_replace: "minecraft:dirt",
-          drop: ["kubejs:stone_pebble", "kubejs:azalea_seeds"],
-          chance: [50, 10],
+          drop: [
+            "kubejs:stone_pebble",
+            "kubejs:azalea_seeds",
+            "kubejs:pile_of_dirt",
+          ],
+          chance: [50, 10, 25],
           isCrouching: true,
         },
       },
@@ -27,23 +31,56 @@ global.jei = {
           drop: [
             "kubejs:stone_pebble",
             "kubejs:small_azalea_roots",
-            "kubejs:small_worm",
+            "aquaculture:worm",
             "anthillinside:ants",
+            "kubejs:carrot_seeds",
           ],
-          chance: [50, 75, 25, 10],
+          chance: [50, 75, 25, 10, 5],
+          isCrouching: true,
+        },
+      },
+      {
+        input: {
+          main_hand: "",
+          off_hand: "",
+          block: 'kubejs:muddy_dirt',
+        },
+        output: {
+          block_replace: 'minecraft:dirt',
+          drop: [
+            "minecraft:clay_ball"
+          ],
+          chance: [25],
           isCrouching: true,
         },
       },
     ],
     composting: [
       {
-        input:"kubejs:pile_of_dirt",
-        output:["minecraft:dirt"]
+        input: "kubejs:pile_of_dirt",
+        output: ["minecraft:dirt"],
       },
       {
-        input:'kubejs:stone_pebble',
-        output:["minecraft:cobblestone"],
+        input: "kubejs:stone_pebble",
+        output: ["minecraft:cobblestone"],
       },
     ],
+    blockdrop : [
+      {
+        input:'minecraft:clay',
+        output:{
+        id:['minecraft:clay_ball'],
+        count:[4],
+        }
+      },
+      {
+        input:'minecraft:stone',
+        output:{
+        id:['minecraft:stone'],
+        count:[],
+        }
+      }
+    ]
+  
   },
 };
