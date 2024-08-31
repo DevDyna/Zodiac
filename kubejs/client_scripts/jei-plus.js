@@ -266,10 +266,10 @@ JEIAddedEvents.registerCategories((event) => {
         let slotSize = 21;
         let slotX = 4;
         let slotY = 2;
-        let tip
+        let tip = "";
         for (let i = 0; i < slotY; i++) {
           for (let j = 0; j < slotX; j++) {
-            tip = recipe.data.output.tip[j * slotX + i]
+            tip = recipe.data.output.tip[j * slotX + i];
             verifyCrude(
               Item.of(
                 recipe.data.output.id[j * slotX + i],
@@ -277,7 +277,7 @@ JEIAddedEvents.registerCategories((event) => {
                   (recipe.data.output.tip[j * slotX + i] == undefined &&
                     recipe.data.output.id[j * slotX + i] != undefined)
                   ? "NAN"
-                  : tip`\"}']}}`
+                  : tip + `\"}']}}`
               ),
               "OUTPUT",
               51 + i * slotSize,
@@ -306,7 +306,7 @@ JEIAddedEvents.registerCategories((event) => {
   });
 
   //---------------------------------------------------------------------------------------//
-  //                                       COMPOSTING                                       //
+  //                                       COMPOSTING                                      //
   //---------------------------------------------------------------------------------------//
 
   event.custom("zodiac:composting", (category) => {
@@ -410,10 +410,10 @@ JEIAddedEvents.registerCategories((event) => {
       .handleLookup((builder, recipe, focuses) => {
         verify(recipe.data.input, "INPUT", 37, 8, builder);
         let slotSize = 21;
-        
+        let tip = "";
         for (let i = 0; i < 4; i++) {
           for (let j = 0; j < 4; j++) {
-            let tip = recipe.data.output.count[j * 4 + i]
+            tip = recipe.data.output.count[j * 4 + i];
             verifyCrude(
               Item.of(
                 recipe.data.output.id[j * 4 + i],
@@ -421,7 +421,7 @@ JEIAddedEvents.registerCategories((event) => {
                   (recipe.data.output.count[j * 4 + i] == undefined &&
                     recipe.data.output.id[j * 4 + i] != undefined)
                   ? 1
-                  : tip`\"}']}}`
+                  : tip + `\"}']}}`
               ),
               "OUTPUT",
               6 + i * slotSize,
@@ -519,7 +519,8 @@ JEIAddedEvents.registerRecipes((event) => {
   });
 
   //---------------------------------//
-
+  
+  //-------DYNAMIC-RECIPES-----------//
   global.jei.recipes.crop_result.forEach((element) => {
     event.custom("zodiac:crop-result").add(element);
   });
@@ -535,4 +536,6 @@ JEIAddedEvents.registerRecipes((event) => {
   global.jei.recipes.blockdrop.forEach((element) => {
     event.custom("zodiac:block-drop").add(element);
   });
+
+  //---------------------------------//
 });
