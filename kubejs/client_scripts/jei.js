@@ -21,6 +21,7 @@ JEIEvents.removeCategories((event) => {
     "terraqueous:endertable",
     "mekanism:boiler_casing",
     "mekanism:nutritional_liquifier",
+    "farmersdelight:decomposition",
   ];
   categories.forEach((e) => {
     event.remove(e);
