@@ -8,7 +8,6 @@ JEIAddedEvents.registerCategories((event) => {
       jeiHelpers: { guiHelper },
     } = category;
     category
-      //https://github.com/mezz/JustEnoughItems/blob/1.20.1/CommonApi/src/main/java/mezz/jei/api/helpers/IGuiHelper.java
       .title("Click on Block")
       .background(
         guiHelper.createDrawable(
@@ -184,7 +183,7 @@ JEIAddedEvents.registerCategories((event) => {
       jeiHelpers: { guiHelper },
     } = category;
     category
-      .title("Conversion with condition - below")
+      .title("Conversion with condition")
       .background(
         guiHelper.createDrawable(
           "zodiac:textures/gui/randomtick/block_below.png",
@@ -194,7 +193,7 @@ JEIAddedEvents.registerCategories((event) => {
           58
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("oak_leaves")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("kubejs:azalea_seed")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -369,12 +368,106 @@ JEIAddedEvents.registerCategories((event) => {
     // );
     //---------------------------------------------------------------------//
   });
+  //---------------------------------------------------------------------------------------//
+  //                                       BLOCK DROP                                      //
+  //---------------------------------------------------------------------------------------//
+
+  event.custom("zodiac:block-drop", (category) => {
+    const {
+      jeiHelpers,
+      jeiHelpers: { guiHelper },
+    } = category;
+    category
+      .title("Block Drop")
+      .background(
+        guiHelper.createDrawable(
+          "zodiac:textures/gui/crop_result.png",
+          2,
+          2,
+          96,
+          136
+        )
+      )
+      .icon(guiHelper.createDrawableItemStack(Item.of("minecraft:clay_ball")))
+      //---------------------------------------------------------------------//
+      //                            SLOT VALIDATOR                           //
+      //---------------------------------------------------------------------//
+      .isRecipeHandled((recipe) => {
+        return !!(
+          recipe?.data?.input !== undefined &&
+          recipe?.data?.output?.id !== undefined &&
+          recipe?.data?.output?.count !== undefined
+        );
+      })
+      //---------------------------------------------------------------------//
+      //                            SLOT IO                                  //
+      //---------------------------------------------------------------------//
+      .handleLookup((builder, recipe, focuses) => {
+        verify(recipe.data.input, "INPUT", 37, 8, builder);
+        //Item.of('minecraft:stone', "{display:{Lore:['{\"text\":\"a\"}']}}")
+        let slotSize = 21;
+        let tooltip;
+        for (let i = 0; i < 4; i++) {
+          for (let j = 0; j < 4; j++) {
+            tooltip = recipe.data.output.count[j * 4 + i];
+
+            verifyCrude(
+              Item.of(
+                recipe.data.output.id[j * 4 + i],
+                `{display:{Lore:['{\"text\":\"x` +
+                  (recipe.data.output.count[j * 4 + i] == undefined &&
+                    recipe.data.output.id[j * 4 + i] != undefined)
+                  ? 1
+                  : tooltip`\"}']}}`
+              ),
+              "OUTPUT",
+              6 + i * slotSize,
+              47 + j * slotSize,
+              builder
+            );
+          }
+        }
+      });
+    //---------------------------------------------------------------------//
+    //                            TEXT DRAWING                             //
+    //---------------------------------------------------------------------//
+    // .setDrawHandler(
+    //   (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
+    //     for (let i = 0; i < 4; i++) {
+    //       for (let j = 0; j < 4; j++) {
+    //         if (
+    //           recipe.data.output.id[j * 3 + i] !== undefined &&
+    //           recipe.data.output.count[j * 3 + i] !== undefined
+    //         ) {
+    //           guiGraphics.drawWordWrap(
+    //             Client.font,
+    //             Text.of(
+    //               convertString("x" + recipe.data.output.count[j * 3 + i])
+    //             ),
+    //             9 + i * 21,
+    //             49 + j * 21,
+    //             20,
+    //             20
+    //           );
+    //         }
+    //       }
+    //     }
+    //   }
+    // );
+    //---------------------------------------------------------------------//
+  });
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
-  event.data.addRecipeCatalyst("minecraft:wooden_pickaxe", "zodiac:click-event");
-  event.data.addRecipeCatalyst("minecraft:flower_pot", "zodiac:random-tick-basic");
-  event.data.addRecipeCatalyst("minecraft:dirt", "zodiac:random-tick-below");
+  event.data.addRecipeCatalyst(
+    "minecraft:wooden_pickaxe",
+    "zodiac:click-event"
+  );
+  event.data.addRecipeCatalyst(
+    "kubejs:azalea_seed",
+    "zodiac:random-tick-below"
+  );
+  event.data.addRecipeCatalyst("minecraft:flower_pot", "zodiac:crop-result");
   event.data.addRecipeCatalyst("kubejs:composter", "zodiac:composting");
 });
 
@@ -409,10 +502,10 @@ JEIAddedEvents.registerRecipes((event) => {
     },
   });
 
-  //DEMO
+  //mud to clay
   event.custom("zodiac:random-tick-basic").add({
     input: "minecraft:mud",
-    output: "minecraft:dirt",
+    output: "minecraft:clay",
   });
 
   //rooted dirt
@@ -436,9 +529,11 @@ JEIAddedEvents.registerRecipes((event) => {
     event.custom("zodiac:click-event").add(element);
   });
 
-
-  global.jei.recipes.composting.forEach(element=>{
+  global.jei.recipes.composting.forEach((element) => {
     event.custom("zodiac:composting").add(element);
-  })
+  });
 
+  global.jei.recipes.blockdrop.forEach((element) => {
+    event.custom("zodiac:block-drop").add(element);
+  });
 });
