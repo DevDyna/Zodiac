@@ -3,7 +3,7 @@
 let azalea = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
   if (age == 7) {
-    for (let i = 0; i < rnd(0, 3); i++) {
+    for (let i = 0; i < rnd(1, 3); i++) {
       event.block.popItem("kubejs:small_azalea_leaf");
     }
   }
@@ -15,7 +15,7 @@ let azalea = (event) => {
 let carrot = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
   if (age == 3) {
-    for (let i = 0; i < rnd(0, 3); i++) {
+    for (let i = 0; i < rnd(1, 3); i++) {
       event.block.popItem("minecraft:carrot");
     }
   }
