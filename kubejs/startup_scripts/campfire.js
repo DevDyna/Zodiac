@@ -1,5 +1,35 @@
 // priority: 0
 
+let campfireState = () => {
+  let result = { variants: {} };
+  let bool = [true, false];
+  let decay = [0, 1, 2, 3];
+  let faces = ["south", "west", "north", "east"];
+  let rotations = [0, 90, 180, 270];
+  let model = "";
+
+  faces.forEach((face, index) => {
+    bool.forEach((lit) => {
+      decay.forEach((dec) => {
+        if (!lit) {
+          model = "minecraft:block/campfire_off";
+        } else if (decay == 3) {
+          model = "zodiac:block/campfire_burnout";
+        } else {
+          model = "minecraft:block/campfire";
+        }
+
+        result.variants["facing=" + face + ",lit=" + lit + ",decay=" + dec] = {
+          model: model,
+          y: rotations[index],
+        };
+      });
+    });
+  });
+
+  return result;
+};
+
 StartupEvents.registry("block", (event) => {
   event
     .create("kubejs:firepit", "cardinal")
@@ -105,7 +135,10 @@ StartupEvents.registry("block", (event) => {
     })
     .item((item) => {
       item.modelJson({
-        parent: "zodiac:block/campfire_burnout",
+        parent: "minecraft:block/campfire_off",
       });
     }).blockstateJson = campfireState();
 });
+
+
+
