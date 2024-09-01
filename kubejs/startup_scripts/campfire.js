@@ -11,7 +11,7 @@ let campfireState = () => {
   faces.forEach((face, index) => {
     bool.forEach((lit) => {
       decay.forEach((dec) => {
-        if(!lit && decay == 3){
+        if(!lit && dec == 3){
           model = "zodiac:block/campfire_burnout";
         } else if (lit){
           model = "minecraft:block/campfire";
@@ -52,56 +52,6 @@ StartupEvents.registry("block", (event) => {
         .set($BooleanProperty.create("lit"), false)
         .set($IntegerProperty.create("decay", 0, 3), 0);
     })
-    .rightClick((click) => {
-      const prop = click.block.properties;
-      const item = click.player.mainHandItem;
-      const { x, y, z } = click.block;
-
-      if (prop.get("decay").toLowerCase() === "3") {
-        click.block.set("minecraft:air");
-        for (let i = 1; i < rnd(2, 4); i++) {
-          click.block.popItem("minecraft:charcoal");
-        }
-        click.level.spawnParticles(
-          "minecraft:smoke",
-          true,
-          x + 0.5,
-          y + 0.5,
-          z + 0.5,
-          0.3 * rnd(0, 4),
-          0.3 * rnd(0, 4),
-          0.3 * rnd(0, 4),
-          rnd(2, 4),
-          0.1
-        );
-        click.level.spawnParticles(
-          "minecraft:ash",
-          true,
-          x + 0.5,
-          y + 0.5,
-          z + 0.5,
-          0.3 * rnd(0, 4),
-          0.3 * rnd(0, 4),
-          0.3 * rnd(0, 4),
-          rnd(4, 16),
-          0.1
-        );
-      }
-      if (
-        item == "kubejs:fire_starter" &&
-        prop.get("lit").toLowerCase() === "false" &&
-        prop.get("decay").toLowerCase() === "0"
-      ) {
-        //click.level.playSound("minecraft:item.flintandsteel.use");
-        click.item.damageValue++;
-        click.block.set(click.block.id, {
-          lit: "true",
-          decay: "0",
-          facing: prop.get("facing").toLowerCase(),
-        });
-      }
-    })
-
     .randomTick((tick) => {
       const { x, y, z } = tick.block;
       const prop = tick.block.properties;
@@ -138,6 +88,6 @@ StartupEvents.registry("block", (event) => {
       item.modelJson({
         parent: "minecraft:block/campfire_off",
       });
-    }).blockstateJson = campfireState();
+    }).noDrops()
+    .blockstateJson = campfireState();
 });
-console.log(campfireState());
