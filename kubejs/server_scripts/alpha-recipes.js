@@ -72,7 +72,7 @@ ServerEvents.recipes((event) => {
 
   shapex(["aquaculture:worm", null, null, "kubejs:barrel"], "kubejs:composter");
 
-  r22("kubejs:pile_of_dirt", "minecraft:mud", "kubejs:small_azalea_roots");
+  //r22("kubejs:pile_of_dirt", "minecraft:mud", "kubejs:small_azalea_roots");
 
   //rstick('minecraft:stick','kubejs:big_stick')
 });
