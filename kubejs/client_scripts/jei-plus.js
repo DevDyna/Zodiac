@@ -132,7 +132,7 @@ JEIAddedEvents.registerCategories((event) => {
       .background(
         guiHelper.createDrawable("zodiac:textures/gui/basic.png", 2, 2, 90, 32)
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("flower_pot")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("mud")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -187,7 +187,7 @@ JEIAddedEvents.registerCategories((event) => {
           58
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("kubejs:azalea_seed")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("rooted_dirt")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -264,20 +264,22 @@ JEIAddedEvents.registerCategories((event) => {
         verify(recipe.data.input, "INPUT", 10, 15, builder);
 
         let slotSize = 21;
-        let slotX = 4;
-        let slotY = 2;
+        let slotY = 4;
+        let slotX = 2;
         let tip = "";
         for (let i = 0; i < slotY; i++) {
           for (let j = 0; j < slotX; j++) {
             tip = recipe.data.output.tip[j * slotX + i];
+            if (
+              recipe.data.output.tip[j * slotX + i] == undefined &&
+              recipe.data.output.id[j * slotX + i] != undefined
+            ) {
+              tip = "NAN";
+            }
             verifyCrude(
               Item.of(
                 recipe.data.output.id[j * slotX + i],
-                `{display:{Lore:['{\"text\":\"` +
-                  (recipe.data.output.tip[j * slotX + i] == undefined &&
-                    recipe.data.output.id[j * slotX + i] != undefined)
-                  ? "NAN"
-                  : tip + `\"}']}}`
+                `{display:{Lore:['{\"text\":\"` + tip + `\"}']}}`
               ),
               "OUTPUT",
               51 + i * slotSize,
@@ -325,7 +327,7 @@ JEIAddedEvents.registerCategories((event) => {
           92
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("clock")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("kubejs:composter")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -414,14 +416,16 @@ JEIAddedEvents.registerCategories((event) => {
         for (let i = 0; i < 4; i++) {
           for (let j = 0; j < 4; j++) {
             tip = recipe.data.output.count[j * 4 + i];
+            if (
+              recipe.data.output.count[j * 4 + i] == undefined &&
+              recipe.data.output.id[j * 4 + i] != undefined
+            ) {
+              tip = "NAN";
+            }
             verifyCrude(
               Item.of(
                 recipe.data.output.id[j * 4 + i],
-                `{display:{Lore:['{\"text\":\"x` +
-                  (recipe.data.output.count[j * 4 + i] == undefined &&
-                    recipe.data.output.id[j * 4 + i] != undefined)
-                  ? 1
-                  : tip + `\"}']}}`
+                `{display:{Lore:['{\"text\":\"` + tip + `\"}']}}`
               ),
               "OUTPUT",
               6 + i * slotSize,
@@ -462,15 +466,6 @@ JEIAddedEvents.registerCategories((event) => {
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
-  event.data.addRecipeCatalyst(
-    "minecraft:wooden_pickaxe",
-    "zodiac:click-event"
-  );
-  event.data.addRecipeCatalyst(
-    "kubejs:azalea_seed",
-    "zodiac:random-tick-below"
-  );
-  event.data.addRecipeCatalyst("minecraft:flower_pot", "zodiac:crop-result");
   event.data.addRecipeCatalyst("kubejs:composter", "zodiac:composting");
 });
 
@@ -519,7 +514,7 @@ JEIAddedEvents.registerRecipes((event) => {
   });
 
   //---------------------------------//
-  
+
   //-------DYNAMIC-RECIPES-----------//
   global.jei.recipes.crop_result.forEach((element) => {
     event.custom("zodiac:crop-result").add(element);
