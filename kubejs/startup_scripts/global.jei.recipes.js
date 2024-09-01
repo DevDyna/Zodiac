@@ -7,6 +7,7 @@ global.jei = {
           main_hand: "",
           off_hand: "",
           block: "minecraft:dirt",
+          extra: "",
         },
         output: {
           block_replace: "minecraft:dirt",
@@ -17,6 +18,7 @@ global.jei = {
           ],
           chance: [50, 10, 25],
           isCrouching: true,
+          extra: "",
         },
       },
 
@@ -25,6 +27,7 @@ global.jei = {
           main_hand: "",
           off_hand: "",
           block: "minecraft:rooted_dirt",
+          extra: "",
         },
         output: {
           block_replace: "minecraft:dirt",
@@ -37,32 +40,22 @@ global.jei = {
           ],
           chance: [50, 75, 25, 10, 5],
           isCrouching: true,
+          extra: "",
         },
       },
       {
         input: {
-          main_hand: "",
-          off_hand: "",
-          block: "kubejs:muddy_dirt",
-        },
-        output: {
-          block_replace: "minecraft:dirt",
-          drop: ["minecraft:clay_ball"],
-          chance: [25],
-          isCrouching: true,
-        },
-      },
-      {
-        input: {
-          main_hand: "minecraft:stick",
-          off_hand: "minecraft:stick",
+          main_hand: "aquaculture:driftwood",
+          off_hand: "aquaculture:driftwood",
           block: "minecraft:oak_planks",
+          extra: "",
         },
         output: {
           block_replace: "kubejs:firepit",
           drop: [],
           chance: [],
           isCrouching: false,
+          extra: "unlit",
         },
       },
     ],
