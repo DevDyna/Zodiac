@@ -11,12 +11,12 @@ let campfireState = () => {
   faces.forEach((face, index) => {
     bool.forEach((lit) => {
       decay.forEach((dec) => {
-        if (!lit) {
-          model = "minecraft:block/campfire_off";
-        } else if (decay == 3) {
+        if(!lit && decay == 3){
           model = "zodiac:block/campfire_burnout";
-        } else {
+        } else if (lit){
           model = "minecraft:block/campfire";
+        }else{
+          model = "minecraft:block/campfire_off";
         }
 
         result.variants["facing=" + face + ",lit=" + lit + ",decay=" + dec] = {
@@ -93,6 +93,7 @@ StartupEvents.registry("block", (event) => {
         prop.get("decay").toLowerCase() === "0"
       ) {
         //click.level.playSound("minecraft:item.flintandsteel.use");
+        click.item.damageValue++;
         click.block.set(click.block.id, {
           lit: "true",
           decay: "0",
@@ -139,6 +140,4 @@ StartupEvents.registry("block", (event) => {
       });
     }).blockstateJson = campfireState();
 });
-
-
-
+console.log(campfireState());
