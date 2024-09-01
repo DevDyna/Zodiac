@@ -534,6 +534,25 @@ JEIAddedEvents.registerRecipes((event) => {
     output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
   });
 
+  //bottle-mud click
+  event.custom("zodiac:click-event").add({
+    input: {
+      main_hand: Item.of('minecraft:potion', '{Potion:"minecraft:water"}'),
+      off_hand: "",
+      block: "minecraft:dirt",
+      extra: "any #minecraft:convertable_to_mud",
+    },
+    output: {
+      block_replace: "minecraft:mud",
+      drop: [],
+      chance: [],
+      isCrouching: false,
+      extra: "",
+    },
+  });
+
+  
+
   //mud to clay
   event.custom("zodiac:random-tick-basic").add({
     input: "minecraft:mud",
