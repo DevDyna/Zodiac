@@ -18,7 +18,10 @@ StartupEvents.registry("item", (event) => {
     .texture("zodiac:item/small_azalea_leaf");
   event.create("kubejs:azalea_seeds").texture("zodiac:item/azalea_seeds");
   event.create("kubejs:carrot_seeds").texture("zodiac:item/carrot_seeds");
-  event.create("kubejs:fire_starter").texture("minecraft:item/flint");
+  event
+    .create("kubejs:fire_starter")
+    .texture("minecraft:item/flint")
+    .maxDamage(4);
 
   event
     .create("kubejs:paxel", "paxel")
