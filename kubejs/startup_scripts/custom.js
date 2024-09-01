@@ -23,6 +23,8 @@ StartupEvents.registry("item", (event) => {
     .texture("minecraft:item/flint")
     .maxDamage(4);
 
+    event.create('kubejs:ash').texture('minecraft:item/bone_meal')
+
   event
     .create("kubejs:paxel", "paxel")
     .parentModel("zodiac:item/paxel")
