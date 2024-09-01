@@ -27,10 +27,12 @@ JEIAddedEvents.registerCategories((event) => {
           recipe?.data?.input?.main_hand !== undefined &&
           recipe?.data?.input?.off_hand !== undefined &&
           recipe?.data?.input?.block !== undefined &&
+          recipe?.data?.input?.extra !== undefined &&
           recipe?.data?.output?.block_replace !== undefined &&
           recipe?.data?.output?.drop !== undefined &&
           recipe?.data?.output?.chance !== undefined &&
-          recipe?.data?.output?.isCrouching !== undefined
+          recipe?.data?.output?.isCrouching !== undefined &&
+          recipe?.data?.output?.extra !== undefined
         );
       })
       //---------------------------------------------------------------------//
@@ -39,8 +41,35 @@ JEIAddedEvents.registerCategories((event) => {
       .handleLookup((builder, recipe, focuses) => {
         verify(recipe.data.input.main_hand, "INPUT", 35, 16, builder);
         verify(recipe.data.input.off_hand, "INPUT", 2, 51, builder);
-        verify(recipe.data.input.block, "INPUT", 35, 82, builder);
-        verify(recipe.data.output.block_replace, "OUTPUT", 88, 22, builder);
+        verifyCrude(
+          recipe.data.input.extra != ""
+            ? Item.of(
+                recipe.data.input.block,
+                `{display:{Lore:['{\"text\":\"` +
+                  recipe.data.input.extra +
+                  `\"}']}}`
+              )
+            : Item.of(recipe.data.input.block),
+
+          "INPUT",
+          35,
+          82,
+          builder
+        );
+        verifyCrude(
+          recipe.data.output.extra != ""
+            ? Item.of(
+                recipe.data.output.block_replace,
+                `{display:{Lore:['{\"text\":\"` +
+                  recipe.data.output.extra +
+                  `\"}']}}`
+              )
+            : Item.of(recipe.data.output.block_replace),
+          "OUTPUT",
+          88,
+          22,
+          builder
+        );
 
         for (let i = 0; i < 3; i++) {
           for (let j = 0; j < 3; j++) {
@@ -438,29 +467,6 @@ JEIAddedEvents.registerCategories((event) => {
     //---------------------------------------------------------------------//
     //                            TEXT DRAWING                             //
     //---------------------------------------------------------------------//
-    // .setDrawHandler(
-    //   (recipe, recipeSlotsView, guiGraphics, mouseX, mouseY) => {
-    //     for (let i = 0; i < 4; i++) {
-    //       for (let j = 0; j < 4; j++) {
-    //         if (
-    //           recipe.data.output.id[j * 3 + i] !== undefined &&
-    //           recipe.data.output.count[j * 3 + i] !== undefined
-    //         ) {
-    //           guiGraphics.drawWordWrap(
-    //             Client.font,
-    //             Text.of(
-    //               convertString("x" + recipe.data.output.count[j * 3 + i])
-    //             ),
-    //             9 + i * 21,
-    //             49 + j * 21,
-    //             20,
-    //             20
-    //           );
-    //         }
-    //       }
-    //     }
-    //   }
-    // );
     //---------------------------------------------------------------------//
   });
 });
@@ -477,12 +483,14 @@ JEIAddedEvents.registerRecipes((event) => {
       main_hand: "kubejs:azalea_seeds",
       off_hand: "",
       block: "minecraft:flower_pot",
+      extra: "",
     },
     output: {
       block_replace: "kubejs:azalea_seed",
       drop: [],
       chance: [],
       isCrouching: false,
+      extra: "",
     },
   });
 
@@ -492,12 +500,31 @@ JEIAddedEvents.registerRecipes((event) => {
       main_hand: "kubejs:carrot_seeds",
       off_hand: "",
       block: "minecraft:flower_pot",
+      extra: "",
     },
     output: {
       block_replace: "kubejs:carrot_seed",
       drop: [],
       chance: [],
       isCrouching: false,
+      extra: "",
+    },
+  });
+
+  //firepit click
+  event.custom("zodiac:click-event").add({
+    input: {
+      main_hand: "kubejs:fire_starter",
+      off_hand: "",
+      block: "kubejs:firepit",
+      extra: "unlit",
+    },
+    output: {
+      block_replace: "kubejs:firepit",
+      drop: [],
+      chance: [],
+      isCrouching: false,
+      extra: "lit",
     },
   });
 
