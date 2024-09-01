@@ -1967,6 +1967,21 @@
 			x: -22.5d
 			y: 3.5d
 		}
+		{
+			id: "375A2EB4BFC3C7B3"
+			tasks: [{
+				icon: "zodiac:node"
+				id: "67D8644B5D80F167"
+				observe_type: 0
+				timer: 0L
+				title: "Look a fidget spinner!"
+				to_observe: "zodiac:node"
+				type: "observation"
+			}]
+			title: "Look , a Fidget spinner!"
+			x: -11.5d
+			y: 4.0d
+		}
 	]
 	title: "age 0"
 }
