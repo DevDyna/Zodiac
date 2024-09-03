@@ -1,0 +1,6 @@
+{
+    "parent": "zodiac:block/barrel/template/full",
+    "textures": {
+        "fluid": "minecraft:block/water"
+    }
+}
