@@ -214,3 +214,4 @@ config/konkrete/locals/pl_pl.local
 config/konkrete/locals/pt_br.local
 defaultconfigs/ftbxmodcompat/ftbxmodcompat.snbt
 config/sprinklerz.json
+config/thermal_integration-common.toml
