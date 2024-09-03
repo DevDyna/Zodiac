@@ -22,8 +22,19 @@ JEIEvents.removeCategories((event) => {
     "mekanism:boiler_casing",
     "mekanism:nutritional_liquifier",
     "farmersdelight:decomposition",
+    'enderio:soul_engine',
+    'thermal:disenchantment_fuel',
+    'thermal:gourmand_fuel',
+    'thermal:stirling_fuel',
   ];
   categories.forEach((e) => {
     event.remove(e);
   });
 });
+
+JEIEvents.removeRecipes(event=>{
+  let list = [
+    
+  ]
+  event.remove('thermal:bottler','thermal:bottler_water_bucket')
+})
