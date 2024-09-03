@@ -78,19 +78,20 @@ ServerEvents.recipes((event) => {
 
   //rstick('kubejs:')
 
-  event.recipes.enderio.tank("kubejs:barrel",'minecraft:dirt','minecraft:water',true)
-  event.recipes.enderio.tank("kubejs:barrel",'minecraft:dirt','minecraft:lava',false)
+  event.shapeless("kubejs:limewater_bottle", [
+    Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT(),
+    "kubejs:ash",
+  ]);
+  less("kubejs:barrel", "enderio:fluid_tank");
+  event.recipes.enderio.tank(
+    "kubejs:air",
+    "kubejs:limewater_bottle",
+    Fluid.of("kubejs:limewater", 250),
+    true
+  );
 });
 
 ServerEvents.recipes((event) => {
   // event.shapeless('minecraft:stone','minecraft:dirt').stage('cactus')
   event.remove({});
-
 });
-
-MoreJSEvents.villagerTrades(event=>{
-  event.removeModdedTrades()
-  event.removeVanillaTrades()
-})
-
-
