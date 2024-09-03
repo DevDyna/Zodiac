@@ -5,10 +5,7 @@
 
 // })
 
-ServerEvents.recipes(event=>{
-    // event.shapeless('minecraft:stone','minecraft:dirt').stage('cactus')
-    event.remove({})
-})
+
 
 // ItemEvents.rightClicked((event) => {
 //   event.player.sendData("show", { list: global.jei.stage });
@@ -28,7 +25,7 @@ ServerEvents.recipes(event=>{
 
 // PlayerEvents.loggedIn((event) => {
 //   event.player.sendData("show", { list: global.jei.stage });
-  
+
 // });
 
 // PlayerEvents.loggedOut(event=>{
