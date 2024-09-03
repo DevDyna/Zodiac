@@ -39,6 +39,17 @@ StartupEvents.registry("item", (event) => {
     .tag("forge:pickaxes");
 
   //event.create("kubejs:big_stick").texture("minecraft:stick");
+
+  event
+    .create("limewater_bottle")
+    .color(0xffffaf)
+    .modelJson = {
+      "parent": "item/generated",
+      "textures": {
+          "layer0": "item/potion_overlay",
+          "layer1": "item/potion"
+      }
+  }
 });
 
 StartupEvents.registry("fluid", (event) => {
