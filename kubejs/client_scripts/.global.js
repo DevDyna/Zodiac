@@ -52,3 +52,7 @@ function convertString(input) {
       builder.addSlot(type, x, y).addItemStack(Item.of("minecraft:air"));
     }
   };
+
+  let verifyFluid = (what, type, x, y, builder) =>{
+    builder.addSlot(type, x, y).addFluidStack(what, 1000)
+  }
