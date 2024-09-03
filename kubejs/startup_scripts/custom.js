@@ -23,7 +23,7 @@ StartupEvents.registry("item", (event) => {
     .texture("minecraft:item/flint")
     .maxDamage(4);
 
-    event.create('kubejs:ash').texture('minecraft:item/bone_meal')
+  event.create("kubejs:ash").texture("minecraft:item/bone_meal");
 
   event
     .create("kubejs:paxel", "paxel")
@@ -39,4 +39,13 @@ StartupEvents.registry("item", (event) => {
     .tag("forge:pickaxes");
 
   //event.create("kubejs:big_stick").texture("minecraft:stick");
+});
+
+StartupEvents.registry("fluid", (event) => {
+  event
+    .create("kubejs:limewater")
+    .flowingTexture("minecraft:block/water_flow")
+    .stillTexture("minecraft:block/water_still")
+    .color(0xffffaf)
+    .bucketColor(0xffffaf);
 });
