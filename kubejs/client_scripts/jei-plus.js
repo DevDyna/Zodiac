@@ -469,10 +469,14 @@ JEIAddedEvents.registerCategories((event) => {
     //---------------------------------------------------------------------//
     //---------------------------------------------------------------------//
   });
+
+    //---------------------------------------------------------------------//
+  //});
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
   event.data.addRecipeCatalyst("kubejs:composter", "zodiac:composting");
+  event.data.addRecipeCatalyst("kubejs:barrel", "zodiac:barrel-mixing");
 });
 
 JEIAddedEvents.registerRecipes((event) => {
@@ -537,10 +541,10 @@ JEIAddedEvents.registerRecipes((event) => {
   //bottle-mud click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: Item.of('minecraft:potion', '{Potion:"minecraft:water"}'),
+      main_hand: Item.of("minecraft:potion", '{Potion:"minecraft:water"}'),
       off_hand: "",
       block: "minecraft:dirt",
-      extra: "any #minecraft:convertable_to_mud",
+      extra: "Accept any #minecraft:convertable_to_mud",
     },
     output: {
       block_replace: "minecraft:mud",
@@ -550,8 +554,6 @@ JEIAddedEvents.registerRecipes((event) => {
       extra: "",
     },
   });
-
-  
 
   //mud to clay
   event.custom("zodiac:random-tick-basic").add({
