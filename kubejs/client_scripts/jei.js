@@ -31,10 +31,3 @@ JEIEvents.removeCategories((event) => {
     event.remove(e);
   });
 });
-
-JEIEvents.removeRecipes(event=>{
-  let list = [
-    
-  ]
-  event.remove('thermal:bottler','thermal:bottler_water_bucket')
-})
