@@ -75,4 +75,22 @@ ServerEvents.recipes((event) => {
   //r22("kubejs:pile_of_dirt", "minecraft:mud", "kubejs:small_azalea_roots");
 
   //rstick('minecraft:stick','kubejs:big_stick')
+
+  //rstick('kubejs:')
+
+  event.recipes.enderio.tank("kubejs:barrel",'minecraft:dirt','minecraft:water',true)
+  event.recipes.enderio.tank("kubejs:barrel",'minecraft:dirt','minecraft:lava',false)
 });
+
+ServerEvents.recipes((event) => {
+  // event.shapeless('minecraft:stone','minecraft:dirt').stage('cactus')
+  event.remove({});
+
+});
+
+MoreJSEvents.villagerTrades(event=>{
+  event.removeModdedTrades()
+  event.removeVanillaTrades()
+})
+
+
