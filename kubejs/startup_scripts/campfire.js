@@ -85,7 +85,7 @@ StartupEvents.registry("block", (event) => {
       }
     })
     .item((item) => {
-      item.tooltip('When light up will create ash and charcoal')
+      //item.tooltip('When light up will create ash and charcoal')
       item.modelJson({
         parent: "minecraft:block/campfire_off",
       });

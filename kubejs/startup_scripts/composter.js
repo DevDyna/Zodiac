@@ -14,7 +14,7 @@ StartupEvents.registry("block", (event) => {
     .box(2, 2, 14, 16, 16, 16)
     .box(14, 2, 0, 16, 16, 14)
     .item((item) => {
-      item.tooltip('Allow to combine items into blocks')
+      //item.tooltip('Allow to combine items into blocks')
       item.modelJson({
         parent: "zodiac:block/composter/template/item/block",
       });
