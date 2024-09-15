@@ -4,6 +4,8 @@ StartupEvents.registry("block", (event) => {
     .textureAll("minecraft:block/coarse_dirt");
 
   event.create("kubejs:muddy_dirt").textureAll("minecraft:block/mud");
+
+  event.create("kubejs:charcoal_block").textureAll("minecraft:block/coal_block");
 });
 
 StartupEvents.registry("item", (event) => {
@@ -41,15 +43,16 @@ StartupEvents.registry("item", (event) => {
   //event.create("kubejs:big_stick").texture("minecraft:stick");
 
   event
-    .create("limewater_bottle")
-    .color(0xffffaf)
-    .modelJson = {
-      "parent": "item/generated",
-      "textures": {
-          "layer0": "item/potion_overlay",
-          "layer1": "item/potion"
-      }
-  }
+    .create("kubejs:limewater_bottle")
+    .color(0, 0xffffaf)
+    .texture("layer0", "minecraft:item/potion_overlay")
+    .texture("layer1", "minecraft:item/potion");
+
+  event
+    .create("kubejs:water_bottle")
+    .color(0, 0x2b4797)
+    .texture("layer0", "minecraft:item/potion_overlay")
+    .texture("layer1", "minecraft:item/potion");
 });
 
 StartupEvents.registry("fluid", (event) => {

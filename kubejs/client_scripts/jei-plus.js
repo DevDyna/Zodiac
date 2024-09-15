@@ -142,6 +142,18 @@ JEIAddedEvents.registerCategories((event) => {
             100,
             0
           );
+
+          if(recipe.data.output.isCrouching){
+            guiGraphics.drawWordWrap(
+              Client.font,
+              Text.of(convertString("hold shift")),
+              3,
+              100,
+              100,
+              0
+            );
+          }
+
         }
       );
     //---------------------------------------------------------------------//
@@ -525,8 +537,8 @@ JEIAddedEvents.registerRecipes((event) => {
     },
     output: {
       block_replace: "kubejs:firepit",
-      drop: [],
-      chance: [],
+      drop: ['minecraft:charcoal', 'kubejs:ash'],
+      chance: [75,50],
       isCrouching: false,
       extra: "lit",
     },

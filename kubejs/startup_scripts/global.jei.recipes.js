@@ -21,7 +21,6 @@ global.jei = {
           extra: "",
         },
       },
-
       {
         input: {
           main_hand: "",
@@ -56,6 +55,21 @@ global.jei = {
           chance: [],
           isCrouching: false,
           extra: "unlit",
+        },
+      },
+      {
+        input: {
+          main_hand: "aquaculture:driftwood",
+          off_hand: "aquaculture:driftwood",
+          block: "kubejs:charcoal_block",
+          extra: "",
+        },
+        output: {
+          block_replace: "minecraft:campfire",
+          drop: [],
+          chance: [],
+          isCrouching: true,
+          extra: "",
         },
       },
     ],
