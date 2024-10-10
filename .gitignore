@@ -216,3 +216,8 @@ defaultconfigs/ftbxmodcompat/ftbxmodcompat.snbt
 config/sprinklerz.json
 config/thermal_integration-common.toml
 makelist.bat
+config/ProjectRed.cfg
+config/custom-micromaterials.cfg
+config/ccl.cfg
+config/thermal_extra-common.toml
+
