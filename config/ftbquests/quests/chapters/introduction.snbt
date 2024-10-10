@@ -1689,7 +1689,7 @@
 				to_observe: "kubejs:azalea"
 				type: "observation"
 			}]
-			title: "Where is my tree !"
+			title: "Where is the tree !"
 			x: -24.0d
 			y: -1.5d
 		}
@@ -1701,8 +1701,9 @@
 				item: "kubejs:azalea_seeds"
 				type: "item"
 			}]
+			title: "Completly renewable sticks"
 			x: -24.0d
-			y: -4.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["35715F6A2C85ABAB"]
@@ -1712,98 +1713,68 @@
 				item: "minecraft:stick"
 				type: "item"
 			}]
-			x: -13.0d
+			x: -22.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["4733BA37D10B7DAA"]
-			id: "18F6712752F98342"
-			tasks: [{
-				id: "3603E091B0D3D5D2"
-				item: "kubejs:stone_pebble"
-				type: "item"
-			}]
-			x: -15.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["4733BA37D10B7DAA"]
-			id: "22C3B2049FC79496"
-			tasks: [{
-				id: "32FA239C54B7CAB1"
-				item: "kubejs:small_azalea_roots"
-				type: "item"
-			}]
-			x: -23.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["6C9A28F51F7BFC0A"]
-			id: "3C139C8670C6E9B9"
-			tasks: [
-				{
-					icon: "farmersdelight:stove"
-					id: "211DB751BF07CFDB"
-					observe_type: 0
-					timer: 0L
-					to_observe: "farmersdelight:stove"
-					type: "observation"
-				}
-				{
-					icon: "farmersdelight:cooking_pot"
-					id: "23F6F5165EC80E66"
-					observe_type: 0
-					timer: 0L
-					to_observe: "farmersdelight:cooking_pot"
-					type: "observation"
-				}
-			]
-			x: -10.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["334C2E85FB313F32"]
+			dependencies: ["3DE044E58F0FA6A8"]
 			id: "77EC37FF99528BCD"
 			tasks: [{
 				id: "7E0709BC5CBA1A56"
 				item: "kubejs:composter"
 				type: "item"
 			}]
-			x: -12.5d
-			y: -0.5d
-		}
-		{
-			dependencies: [
-				"18F6712752F98342"
-				"77EC37FF99528BCD"
-			]
-			id: "6C9A28F51F7BFC0A"
-			tasks: [{
-				id: "6BB28C4CFF5BEB58"
-				item: "minecraft:cobblestone"
-				type: "item"
-			}]
-			x: -12.5d
-			y: 1.5d
+			x: -15.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["4733BA37D10B7DAA"]
+			icon: "anthillinside:ants"
 			id: "792A98FB0CA6054A"
-			tasks: [{
-				id: "40ECA9188C70E85F"
-				item: {
-					Count: 1
-					id: "aquaculture:worm"
-					tag: {
-						Damage: 0
+			tasks: [
+				{
+					id: "40ECA9188C70E85F"
+					item: {
+						Count: 1
+						id: "aquaculture:worm"
+						tag: {
+							Damage: 0
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
-			x: -15.5d
+				{
+					id: "3C6FFE4784A39A88"
+					item: "kubejs:small_azalea_roots"
+					type: "item"
+				}
+				{
+					id: "51E1E61AB8E7706D"
+					item: "kubejs:small_azalea_leaf"
+					type: "item"
+				}
+				{
+					id: "6C78057B6C9D5C91"
+					item: "anthillinside:ants"
+					type: "item"
+				}
+				{
+					id: "208B48078B2150E6"
+					item: "kubejs:cobblestone_pebble"
+					type: "item"
+				}
+				{
+					id: "1D846A9C3409901B"
+					item: "kubejs:carrot_seeds"
+					type: "item"
+				}
+			]
+			title: "Scrapping"
+			x: -21.0d
 			y: 0.5d
 		}
 		{
+			dependencies: ["4FB569AA6F3D2EF9"]
 			id: "4733BA37D10B7DAA"
 			tasks: [
 				{
@@ -1828,17 +1799,21 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["3C139C8670C6E9B9"]
+			dependencies: ["77EC37FF99528BCD"]
 			id: "2CFBB1E875E774D5"
 			tasks: [{
 				id: "4AE3C953E3216DF6"
 				item: "minecraft:stone"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 1.5d
+			x: -9.0d
+			y: -2.0d
 		}
 		{
+			dependencies: [
+				"2CFBB1E875E774D5"
+				"64FB1BECA1A1A55D"
+			]
 			hide: true
 			hide_dependency_lines: false
 			id: "1735D43186CB4366"
@@ -1868,7 +1843,7 @@
 				item: "aquaculture:driftwood"
 				type: "item"
 			}]
-			x: -11.5d
+			x: -20.0d
 			y: -4.0d
 		}
 		{
@@ -1879,52 +1854,22 @@
 				item: "minecraft:oak_planks"
 				type: "item"
 			}]
-			x: -10.5d
+			x: -18.5d
 			y: -4.0d
 		}
 		{
-			dependencies: ["4733BA37D10B7DAA"]
-			id: "17C2852C94131440"
-			subtitle: "My new colony"
-			tasks: [{
-				id: "61662D84793500F5"
-				item: "anthillinside:ants"
-				type: "item"
-			}]
-			x: -24.5d
-			y: 1.5d
-		}
-		{
-			id: "50E883884A3DFE63"
-			tasks: [{
-				id: "2BBCDACEF69162A2"
-				item: "kubejs:small_azalea_leaf"
-				type: "item"
-			}]
-			x: -18.5d
-			y: -0.5d
-		}
-		{
+			dependencies: ["499FFCB2EC645EB9"]
 			id: "64FB1BECA1A1A55D"
 			tasks: [{
 				id: "2D41C6C42420F662"
 				item: "minecraft:clay"
 				type: "item"
 			}]
-			x: -17.0d
-			y: -2.0d
+			x: -8.5d
+			y: 0.0d
 		}
 		{
-			id: "0373161D768A71A2"
-			tasks: [{
-				id: "6914D0B568FBA79A"
-				item: "minecraft:campfire"
-				type: "item"
-			}]
-			x: -16.0d
-			y: 4.0d
-		}
-		{
+			dependencies: ["334C2E85FB313F32"]
 			id: "0738BEC6FA7566B2"
 			tasks: [{
 				icon: "kubejs:firepit"
@@ -1934,8 +1879,8 @@
 				to_observe: "kubejs:firepit"
 				type: "observation"
 			}]
-			x: -14.0d
-			y: 4.0d
+			x: -17.0d
+			y: -4.0d
 		}
 		{
 			id: "4BA190564D04891D"
@@ -1944,7 +1889,7 @@
 				item: "kubejs:muddy_dirt"
 				type: "item"
 			}]
-			x: -19.0d
+			x: -20.0d
 			y: 4.0d
 		}
 		{
@@ -1954,18 +1899,22 @@
 				item: "kubejs:gravelly_dirt"
 				type: "item"
 			}]
-			x: -20.5d
+			x: -19.0d
 			y: 4.0d
 		}
 		{
+			dependencies: [
+				"3CEE940E50AA6D71"
+				"509543E37C91A2BC"
+			]
 			id: "499FFCB2EC645EB9"
 			tasks: [{
 				id: "75D576D8CBD2DBD6"
 				item: "minecraft:mud"
 				type: "item"
 			}]
-			x: -22.5d
-			y: 3.5d
+			x: -13.5d
+			y: 0.5d
 		}
 		{
 			id: "375A2EB4BFC3C7B3"
@@ -1981,6 +1930,133 @@
 			title: "Look , a Fidget spinner!"
 			x: -11.5d
 			y: 4.0d
+		}
+		{
+			dependencies: ["0FBBDC453892E193"]
+			id: "474B2CE29EEA6FB4"
+			tasks: [
+				{
+					id: "3560425780B1C783"
+					item: "embers:caminite_blend"
+					type: "item"
+				}
+				{
+					id: "0DCA786C73B13C28"
+					item: "embers:sealed_planks"
+					type: "item"
+				}
+			]
+			title: "Limewater Injection"
+			x: -11.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["792A98FB0CA6054A"]
+			id: "3156940A23397028"
+			tasks: [{
+				id: "309E6351F47013B4"
+				item: "kubejs:organic_pile"
+				type: "item"
+			}]
+			x: -18.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"3156940A23397028"
+				"6999D6CD04134388"
+			]
+			id: "0114AD63557CC25E"
+			tasks: [{
+				id: "2BEF425DB378F179"
+				item: "kubejs:dirt_pile"
+				type: "item"
+			}]
+			x: -17.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"0114AD63557CC25E"
+				"77EC37FF99528BCD"
+			]
+			id: "3CEE940E50AA6D71"
+			tasks: [{
+				id: "6825634E2B03738B"
+				item: "minecraft:dirt"
+				type: "item"
+			}]
+			x: -15.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7D67576B77A6F02E"]
+			id: "6999D6CD04134388"
+			tasks: [{
+				id: "1DBDC9E890363178"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			x: -17.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0738BEC6FA7566B2"]
+			id: "7D67576B77A6F02E"
+			tasks: [
+				{
+					id: "0CC09697D2F30169"
+					item: "minecraft:charcoal"
+					type: "item"
+				}
+				{
+					id: "37D71B59BF4BBD31"
+					item: "kubejs:ash"
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "New Items"
+			x: -17.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["3DE044E58F0FA6A8"]
+			id: "0FBBDC453892E193"
+			tasks: [{
+				id: "535E0D7AC19B4372"
+				item: "enderio:fluid_tank"
+				type: "item"
+			}]
+			x: -13.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0FBBDC453892E193"]
+			id: "509543E37C91A2BC"
+			rewards: [{
+				id: "31A56A1B6C8CA10F"
+				item: "minecraft:glass_bottle"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F1B94BC1257690A"
+				item: "watercollector:watercollector"
+				type: "item"
+			}]
+			x: -13.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["334C2E85FB313F32"]
+			id: "3DE044E58F0FA6A8"
+			tasks: [{
+				id: "599A2619C48DA697"
+				item: "kubejs:barrel"
+				type: "item"
+			}]
+			x: -15.5d
+			y: -4.0d
 		}
 	]
 	title: "age 0"
