@@ -168,19 +168,19 @@ StartupEvents.registry("block", (event) => {
       //--------------------------------------------------------------//
       {
         when: { stage: "0", type: "2" },
-        apply: { model: "zodiac:block/composter/cobblestone/stage0" },
+        apply: { model: "zodiac:block/composter/stone/stage0" },
       },
       {
         when: { stage: "1", type: "2" },
-        apply: { model: "zodiac:block/composter/cobblestone/stage1" },
+        apply: { model: "zodiac:block/composter/stone/stage1" },
       },
       {
         when: { stage: "2", type: "2" },
-        apply: { model: "zodiac:block/composter/cobblestone/stage2" },
+        apply: { model: "zodiac:block/composter/stone/stage2" },
       },
       {
         when: { stage: "3", type: "2" },
-        apply: { model: "zodiac:block/composter/cobblestone/stage3" },
+        apply: { model: "zodiac:block/composter/stone/stage3" },
       },
       //--------------------------------------------------------------//
     ],

@@ -5,9 +5,13 @@ ServerEvents.recipes((event) => {
    * @param {Item} output
    */
   let less = (inputs, output) => {
-    if (!Array.isArray(inputs)) inputs = [inputs];
+    if (inputs != null && output != null) {
+      if (!Array.isArray(inputs)) inputs = [inputs];
 
-    event.shapeless(output, inputs);
+      event.shapeless(output, inputs);
+    } else {
+      console.log("RecipeError: in " + inputs + " | out " + output);
+    }
   };
 
   /**
@@ -16,23 +20,27 @@ ServerEvents.recipes((event) => {
    * @param {Item} output
    */
   let shapex = (inputs, output) => {
-    if (!Array.isArray(inputs)) inputs = [inputs];
+    if (inputs != null && output != null) {
+      if (!Array.isArray(inputs)) inputs = [inputs];
 
-    inputs.forEach((element) => {
-      if (element == null) element = "minecraft:air";
-    });
+      inputs.forEach((element) => {
+        if (element == null) element = "minecraft:air";
+      });
 
-    event.shaped(output, ["ABC", "DEF", "GHI"], {
-      A: inputs[0],
-      B: inputs[1],
-      C: inputs[2],
-      D: inputs[3],
-      E: inputs[4],
-      F: inputs[5],
-      G: inputs[6],
-      H: inputs[7],
-      I: inputs[8],
-    });
+      event.shaped(output, ["ABC", "DEF", "GHI"], {
+        A: inputs[0],
+        B: inputs[1],
+        C: inputs[2],
+        D: inputs[3],
+        E: inputs[4],
+        F: inputs[5],
+        G: inputs[6],
+        H: inputs[7],
+        I: inputs[8],
+      });
+    } else {
+      console.log("RecipeError: in " + inputs + " | out " + output);
+    }
   };
 
   /**
@@ -49,6 +57,36 @@ ServerEvents.recipes((event) => {
         null,
         alter !== undefined ? alter : input,
         input,
+      ],
+      output
+    );
+  };
+
+  /**
+   *
+   * @param {Item[]|Item} input
+   * @param {Item} output
+   * @param {Boolean} invert invert input direction
+   */
+  let rplate = (inputs, output, invert) => {
+    if (!Array.isArray(inputs)) inputs = [inputs];
+
+    shapex(
+      [
+        !invert
+          ? inputs.lenght > 0
+            ? inputs[0]
+            : inputs[1]
+          : inputs.lenght > 0
+          ? inputs[1]
+          : inputs[0],
+        invert
+          ? inputs.lenght > 0
+            ? inputs[0]
+            : inputs[1]
+          : inputs.lenght > 0
+          ? inputs[1]
+          : inputs[0],
       ],
       output
     );
@@ -93,12 +131,7 @@ ServerEvents.recipes((event) => {
    * @param {Boolean} invert invert input direction
    */
   let rsalter = (input, output) => {
-    shapex(
-      [
-        null,input,null,input
-      ],
-      output
-    );
+    shapex([null, input, null, input], output);
   };
 
   less("aquaculture:driftwood", "4x minecraft:stick");
@@ -109,16 +142,17 @@ ServerEvents.recipes((event) => {
 
   r22("aquaculture:driftwood", "2x minecraft:oak_planks");
 
-  shapex(
-    [
-      "aquaculture:driftwood",
-      "aquaculture:driftwood",
-      null,
-      "minecraft:oak_planks",
-      "minecraft:oak_planks",
-    ],
-    "kubejs:barrel"
-  );
+  r22("aquaculture:driftwood", "kubejs:barrel", "minecraft:oak_planks");
+  // shapex(
+  //   [
+  //     "aquaculture:driftwood",
+  //     "aquaculture:driftwood",
+  //     null,
+  //     "minecraft:oak_planks",
+  //     "minecraft:oak_planks",
+  //   ],
+  //   "kubejs:barrel"
+  // );
 
   rstick(["aquaculture:worm", "kubejs:barrel"], "kubejs:composter", true);
 
@@ -131,7 +165,6 @@ ServerEvents.recipes((event) => {
 
   less(["kubejs:water_bottle", "kubejs:ash"], "kubejs:limewater_bottle");
 
-  less("kubejs:barrel", "enderio:fluid_tank");
   event.recipes.enderio.tank(
     "minecraft:glass_bottle",
     "kubejs:limewater_bottle",
@@ -185,12 +218,71 @@ ServerEvents.recipes((event) => {
     false
   );
 
-  event.recipes.enderio.tank(
-    "railcraft:quarried_cobblestone",
-    "#forge:cobblestone",
+  // event.recipes.enderio.tank(
+  //   "railcraft:quarried_cobblestone",
+  //   "#forge:cobblestone",
 
-    Fluid.of("kubejs:limewater", 50),
-    false
+  //   Fluid.of("kubejs:limewater", 50),
+  //   false
+  // );
+
+  event.campfireCooking("kubejs:stone_pebble", "kubejs:cobblestone_pebble");
+  event.campfireCooking("kubejs:dirt_pile", "kubejs:organic_pile");
+
+  less(
+    ["kubejs:small_azalea_roots", "kubejs:small_azalea_leaf"],
+    "2x kubejs:organic_pile"
+  );
+
+  rstick(
+    ["minecraft:stick", "minecraft:oak_planks"],
+    "aquaculture:wooden_fillet_knife"
+  );
+
+  rstick(["kubejs:composter", "aquaculture:driftwood"], "enderio:fluid_tank");
+
+  rstick(
+    ["enderio:fluid_tank", "aquaculture:driftwood"],
+    "watercollector:watercollector"
+  );
+
+  r22("minecraft:clay_ball", "minecraft:clay");
+  less("minecraft:clay", "4x minecraft:clay_ball");
+
+  rstick(
+    ["kubejs:barrel", "aquaculture:driftwood"],
+    "terraqueous:apple_barrel"
+  );
+
+  shapex(
+    [
+      "minecraft:stone",
+      "minecraft:stone",
+      null,
+      "minecraft:clay",
+      "minecraft:clay",
+    ],
+    "kubejs:stone_casing"
+  );
+
+  less(
+    [
+      "kubejs:stone_casing",
+      "aquaculture:driftwood",
+      "terraqueous:apple_barrel",
+    ],
+    "terraqueous:craftbench"
+  );
+  less(
+    ["kubejs:stone_casing", "aquaculture:driftwood", "kubejs:composter"],
+    "terraqueous:craftfurnace"
+  );
+
+  event.smelting("minecraft:brick", "minecraft:clay_ball");
+
+  shapex(
+    ["minecraft:brick", null, "minecraft:brick", null, "minecraft:brick"],
+    "3x minecraft:flower_pot"
   );
 });
 

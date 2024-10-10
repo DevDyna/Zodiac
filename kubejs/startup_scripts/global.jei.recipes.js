@@ -12,9 +12,8 @@ global.jei = {
         output: {
           block_replace: "minecraft:dirt",
           drop: [
-            "kubejs:stone_pebble",
+            "kubejs:cobblestone_pebble",
             "kubejs:azalea_seeds",
-            "kubejs:pile_of_dirt",
           ],
           chance: [50, 10, 25],
           isCrouching: true,
@@ -31,7 +30,7 @@ global.jei = {
         output: {
           block_replace: "minecraft:dirt",
           drop: [
-            "kubejs:stone_pebble",
+            "kubejs:cobblestone_pebble",
             "kubejs:small_azalea_roots",
             "aquaculture:worm",
             "anthillinside:ants",
@@ -75,12 +74,16 @@ global.jei = {
     ],
     composting: [
       {
-        input: "kubejs:pile_of_dirt",
+        input: "kubejs:dirt_pile",
         output: ["minecraft:dirt"],
       },
+      // {
+      //   input: "kubejs:cobblestone_pebble",
+      //   output: ["minecraft:cobblestone"],
+      // },
       {
         input: "kubejs:stone_pebble",
-        output: ["minecraft:cobblestone"],
+        output: ["minecraft:stone"],
       },
     ],
     blockdrop: [
@@ -94,8 +97,8 @@ global.jei = {
       {
         input: "minecraft:stone",
         output: {
-          id: ["minecraft:stone"],
-          count: [],
+          id: ["minecraft:cobblestone"],
+          count: [1],
         },
       },
     ],

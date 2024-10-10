@@ -5,12 +5,31 @@ StartupEvents.registry("block", (event) => {
 
   event.create("kubejs:muddy_dirt").textureAll("minecraft:block/mud");
 
-  event.create("kubejs:charcoal_block").textureAll("minecraft:block/coal_block");
+  event
+    .create("kubejs:charcoal_block")
+    .textureAll("minecraft:block/coal_block");
+
+  event.create("kubejs:stone_casing",'cardinal').soundType("stone")
+  .hardness(0.5)
+  .resistance(0.5)
+  .requiresTool(false)
+  .modelJson = {
+    parent: "minecraft:block/cube_bottom_top",
+    textures: {
+      bottom: "terraqueous:block/craft_blank",
+      side: "terraqueous:block/craftfurnace_side",
+      top: "terraqueous:block/craft_blank",
+    },
+  };
 });
 
 StartupEvents.registry("item", (event) => {
+  event
+    .create("kubejs:cobblestone_pebble")
+    .texture("zodiac:item/cobblestone_pebble");
   event.create("kubejs:stone_pebble").texture("zodiac:item/stone_pebble");
-  event.create("kubejs:pile_of_dirt").texture("zodiac:item/pile_of_dirt");
+  event.create("kubejs:dirt_pile").texture("zodiac:item/dirt_pile");
+  event.create("kubejs:organic_pile").texture("zodiac:item/organic_pile");
   //event.create("kubejs:small_worm").texture("zodiac:item/small_worm");
   event
     .create("kubejs:small_azalea_roots")

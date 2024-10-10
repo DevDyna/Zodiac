@@ -146,8 +146,8 @@ JEIAddedEvents.registerCategories((event) => {
           if(recipe.data.output.isCrouching){
             guiGraphics.drawWordWrap(
               Client.font,
-              Text.of(convertString("hold shift")),
-              3,
+              Text.of(convertString("shift")),
+              20,
               100,
               100,
               0
