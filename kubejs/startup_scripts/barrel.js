@@ -1,6 +1,6 @@
 StartupEvents.registry("block", (event) => {
   event
-    .create("kubejs:barrel")
+    .create("zodiac:barrel")
     .item((item) => {
       item.modelJson({
         parent: "zodiac:block/barrel/template/empty",

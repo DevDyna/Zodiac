@@ -1729,20 +1729,9 @@
 		}
 		{
 			dependencies: ["4733BA37D10B7DAA"]
-			icon: "anthillinside:ants"
+			icon: "kubejs:cobblestone_pebble"
 			id: "792A98FB0CA6054A"
 			tasks: [
-				{
-					id: "40ECA9188C70E85F"
-					item: {
-						Count: 1
-						id: "aquaculture:worm"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
 				{
 					id: "3C6FFE4784A39A88"
 					item: "kubejs:small_azalea_roots"
@@ -1751,11 +1740,6 @@
 				{
 					id: "51E1E61AB8E7706D"
 					item: "kubejs:small_azalea_leaf"
-					type: "item"
-				}
-				{
-					id: "6C78057B6C9D5C91"
-					item: "anthillinside:ants"
 					type: "item"
 				}
 				{
@@ -1770,7 +1754,7 @@
 				}
 			]
 			title: "Scrapping"
-			x: -21.0d
+			x: -20.5d
 			y: 0.5d
 		}
 		{
@@ -1814,8 +1798,8 @@
 				"2CFBB1E875E774D5"
 				"64FB1BECA1A1A55D"
 			]
-			hide: true
 			hide_dependency_lines: false
+			hide_until_deps_visible: true
 			id: "1735D43186CB4366"
 			shape: "gear"
 			size: 3.0d
@@ -1836,18 +1820,7 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["702D6727C7EB9390"]
-			id: "26EA226F2CCD2B46"
-			tasks: [{
-				id: "7E36C5FF43264C29"
-				item: "aquaculture:driftwood"
-				type: "item"
-			}]
-			x: -20.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["26EA226F2CCD2B46"]
+			dependencies: ["136B4300FA09FF8F"]
 			id: "334C2E85FB313F32"
 			tasks: [{
 				id: "313EFB0D2D09948C"
@@ -1917,32 +1890,18 @@
 			y: 0.5d
 		}
 		{
-			id: "375A2EB4BFC3C7B3"
-			tasks: [{
-				icon: "zodiac:node"
-				id: "67D8644B5D80F167"
-				observe_type: 0
-				timer: 0L
-				title: "Look a fidget spinner!"
-				to_observe: "zodiac:node"
-				type: "observation"
-			}]
-			title: "Look , a Fidget spinner!"
-			x: -11.5d
-			y: 4.0d
-		}
-		{
 			dependencies: ["0FBBDC453892E193"]
+			icon: "kubejs:tinted_clay"
 			id: "474B2CE29EEA6FB4"
 			tasks: [
 				{
 					id: "3560425780B1C783"
-					item: "embers:caminite_blend"
+					item: "kubejs:tinted_clay"
 					type: "item"
 				}
 				{
 					id: "0DCA786C73B13C28"
-					item: "embers:sealed_planks"
+					item: "kubejs:tinted_planks"
 					type: "item"
 				}
 			]
@@ -2056,6 +2015,17 @@
 				type: "item"
 			}]
 			x: -15.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["702D6727C7EB9390"]
+			id: "136B4300FA09FF8F"
+			tasks: [{
+				id: "6F3B7211DDB14720"
+				item: "aquaculture:driftwood"
+				type: "item"
+			}]
+			x: -20.0d
 			y: -4.0d
 		}
 	]

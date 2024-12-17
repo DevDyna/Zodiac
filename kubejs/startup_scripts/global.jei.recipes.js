@@ -11,10 +11,7 @@ global.jei = {
         },
         output: {
           block_replace: "minecraft:dirt",
-          drop: [
-            "kubejs:cobblestone_pebble",
-            "kubejs:azalea_seeds",
-          ],
+          drop: ["zodiac:cobblestone_pebble", "zodiac:azalea_seeds"],
           chance: [50, 10, 25],
           isCrouching: true,
           extra: "",
@@ -30,11 +27,10 @@ global.jei = {
         output: {
           block_replace: "minecraft:dirt",
           drop: [
-            "kubejs:cobblestone_pebble",
-            "kubejs:small_azalea_roots",
+            "zodiac:cobblestone_pebble",
+            "zodiac:small_azalea_roots",
             "aquaculture:worm",
-            "anthillinside:ants",
-            "kubejs:carrot_seeds",
+            "zodiac:carrot_seeds",
           ],
           chance: [50, 75, 25, 10, 5],
           isCrouching: true,
@@ -49,7 +45,7 @@ global.jei = {
           extra: "",
         },
         output: {
-          block_replace: "kubejs:firepit",
+          block_replace: "zodiac:firepit",
           drop: [],
           chance: [],
           isCrouching: false,
@@ -60,7 +56,7 @@ global.jei = {
         input: {
           main_hand: "aquaculture:driftwood",
           off_hand: "aquaculture:driftwood",
-          block: "kubejs:charcoal_block",
+          block: "zodiac:charcoal_block",
           extra: "",
         },
         output: {
@@ -74,15 +70,15 @@ global.jei = {
     ],
     composting: [
       {
-        input: "kubejs:dirt_pile",
+        input: "zodiac:dirt_pile",
         output: ["minecraft:dirt"],
       },
       // {
-      //   input: "kubejs:cobblestone_pebble",
+      //   input: "zodiac:cobblestone_pebble",
       //   output: ["minecraft:cobblestone"],
       // },
       {
-        input: "kubejs:stone_pebble",
+        input: "zodiac:stone_pebble",
         output: ["minecraft:stone"],
       },
     ],
@@ -104,14 +100,14 @@ global.jei = {
     ],
     crop_result: [
       {
-        input: "kubejs:azalea_seed",
+        input: "zodiac:azalea_seed",
         output: {
-          id: ["kubejs:small_azalea_leaf", "minecraft:stick"],
+          id: ["zodiac:small_azalea_leaf", "minecraft:stick"],
           tip: ["1-3", "1"],
         },
       },
       {
-        input: "kubejs:carrot_seed",
+        input: "zodiac:carrot_seed",
         output: { id: ["minecraft:carrot"], tip: ["1-3"] },
       },
     ],

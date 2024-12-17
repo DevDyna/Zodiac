@@ -4,7 +4,7 @@ let azalea = (event) => {
   let age = event.block.properties.get("age").toLowerCase();
   if (age == 7) {
     for (let i = 0; i < rnd(1, 3); i++) {
-      event.block.popItem("kubejs:small_azalea_leaf");
+      event.block.popItem("zodiac:small_azalea_leaf");
     }
   }
   if (age >= 3) {
@@ -22,15 +22,15 @@ let carrot = (event) => {
 };
 
 potEvents(
-  "kubejs:azalea",
-  "kubejs:azalea_seeds",
+  "zodiac:azalea",
+  "zodiac:azalea_seeds",
   "minecraft:flower_pot",
   azalea
 );
 
 potEvents(
-  "kubejs:carrot",
-  "kubejs:carrot_seeds",
+  "zodiac:carrot",
+  "zodiac:carrot_seeds",
   "minecraft:flower_pot",
   carrot
 );

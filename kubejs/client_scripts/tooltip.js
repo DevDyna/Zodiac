@@ -1,7 +1,7 @@
 ItemEvents.tooltip((event) => {
-  event.add("kubejs:composter", "Allow to combine items into blocks");
+  event.add("zodiac:composter", "Allow to combine items into blocks");
 
-  event.add(["kubejs:water_bottle", "kubejs:limewater_bottle"], "§aNo Potion");
+  event.add(["zodiac:water_bottle", "zodiac:limewater_bottle"], "§aNo Potion");
 
   event.add('watercollector:watercollector','§aGenerate Unlimited Water from nothing')
 

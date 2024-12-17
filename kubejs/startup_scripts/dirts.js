@@ -21,7 +21,7 @@ StartupEvents.registry("block", (event) => {
         ) == 1;
       };
 
-      if (tick.block.offset(Facing.UP) == "kubejs:azalea") {
+      if (tick.block.offset(Facing.UP) == "zodiac:azalea") {
         if (chance(tick.block.offset(Facing.UP))) {
           tick.block.set("minecraft:rooted_dirt");
         }
@@ -30,7 +30,7 @@ StartupEvents.registry("block", (event) => {
           if (tick.block.offset(pos) == "minecraft:rooted_dirt") {
             faces.forEach((dir) => {
               if (
-                tick.block.offset(pos).offset(dir) == "kubejs:azalea" &&
+                tick.block.offset(pos).offset(dir) == "zodiac:azalea" &&
                 chance(tick.block.offset(pos).offset(dir))
               ) {
                 tick.block.set("minecraft:rooted_dirt");

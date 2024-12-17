@@ -2,7 +2,7 @@
 
 StartupEvents.registry("block", (event) => {
   event
-    .create("kubejs:carrot", "crop")
+    .create("zodiac:carrot", "crop")
     .age(3, (builder) => {
       builder
          .shape(0, 5, 0, 5, 11, 6, 11)

@@ -32,7 +32,7 @@ let campfireState = () => {
 
 StartupEvents.registry("block", (event) => {
   event
-    .create("kubejs:firepit", "cardinal")
+    .create("zodiac:firepit", "cardinal")
     .property($BooleanProperty.create("lit"))
     .property($IntegerProperty.create("decay", 0, 3))
     .defaultCutout()

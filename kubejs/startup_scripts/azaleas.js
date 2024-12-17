@@ -2,7 +2,7 @@
 
 StartupEvents.registry("block", (event) => {
   event
-    .create("kubejs:azalea", "crop")
+    .create("zodiac:azalea", "crop")
     .age(7, (builder) => {
       builder
         .shape(0, 5, 0, 5, 11, 12, 11)
@@ -19,7 +19,7 @@ StartupEvents.registry("block", (event) => {
     })
     .growTick(() => 600)
     .dropSeed(false)
-    //.crop("kubejs:small_azalea_leaf")
+    //.crop("zodiac:small_azalea_leaf")
     .item((seedItem) => {
       seedItem.parentModel("zodiac:block/azalea/age7");
     }).blockstateJson = blockstate("zodiac:block/azalea/", "age", 8);

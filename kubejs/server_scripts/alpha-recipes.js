@@ -138,51 +138,41 @@ ServerEvents.recipes((event) => {
 
   r22("minecraft:stick", "aquaculture:driftwood");
 
-  r22("minecraft:charcoal", "kubejs:charcoal_block");
+  r22("minecraft:charcoal", "zodiac:charcoal_block");
 
   r22("aquaculture:driftwood", "2x minecraft:oak_planks");
 
-  r22("aquaculture:driftwood", "kubejs:barrel", "minecraft:oak_planks");
-  // shapex(
-  //   [
-  //     "aquaculture:driftwood",
-  //     "aquaculture:driftwood",
-  //     null,
-  //     "minecraft:oak_planks",
-  //     "minecraft:oak_planks",
-  //   ],
-  //   "kubejs:barrel"
-  // );
+  r22("aquaculture:driftwood", "zodiac:barrel", "minecraft:oak_planks");
 
-  rstick(["aquaculture:worm", "kubejs:barrel"], "kubejs:composter", true);
+  rstick(["aquaculture:worm", "zodiac:barrel"], "zodiac:composter", true);
 
-  rsalter("minecraft:stick", "kubejs:fire_starter");
+  rsalter("minecraft:stick", "zodiac:fire_starter");
 
-  event.shapeless("kubejs:limewater_bottle", [
+  event.shapeless("zodiac:limewater_bottle", [
     Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT(),
-    "kubejs:ash",
+    "zodiac:ash",
   ]);
 
-  less(["kubejs:water_bottle", "kubejs:ash"], "kubejs:limewater_bottle");
+  less(["zodiac:water_bottle", "zodiac:ash"], "zodiac:limewater_bottle");
 
   event.recipes.enderio.tank(
     "minecraft:glass_bottle",
-    "kubejs:limewater_bottle",
-    Fluid.of("kubejs:limewater", 250),
+    "zodiac:limewater_bottle",
+    Fluid.of("zodiac:limewater", 250),
     true
   );
 
   less(
-    "kubejs:water_bottle",
+    "zodiac:water_bottle",
     Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT()
   );
   less(
     Item.of("minecraft:potion", '{Potion:"minecraft:water"}').strongNBT(),
-    "kubejs:water_bottle"
+    "zodiac:water_bottle"
   );
 
   event.recipes.enderio.tank(
-    "kubejs:water_bottle",
+    "zodiac:water_bottle",
     "minecraft:glass_bottle",
     Fluid.of("minecraft:water", 250),
     false
@@ -197,41 +187,41 @@ ServerEvents.recipes((event) => {
 
   event.recipes.enderio.tank(
     "minecraft:glass_bottle",
-    "kubejs:water_bottle",
+    "zodiac:water_bottle",
     Fluid.of("minecraft:water", 250),
     true
   );
 
   event.recipes.enderio.tank(
-    "embers:caminite_blend",
+    "zodiac:tinted_clay",
     "minecraft:clay_ball",
 
-    Fluid.of("kubejs:limewater", 50),
+    Fluid.of("zodiac:limewater", 50),
     false
   );
 
   event.recipes.enderio.tank(
-    "embers:sealed_planks",
+    "zodiac:tinted_planks",
     "#minecraft:planks",
 
-    Fluid.of("kubejs:limewater", 50),
+    Fluid.of("zodiac:limewater", 50),
     false
   );
 
-  // event.recipes.enderio.tank(
-  //   "railcraft:quarried_cobblestone",
-  //   "#forge:cobblestone",
+  event.recipes.enderio.tank(
+    "zodiac:tinted_planks",
+    "minecraft:oak_planks",
 
-  //   Fluid.of("kubejs:limewater", 50),
-  //   false
-  // );
+    Fluid.of("zodiac:limewater", 50),
+    false
+  );
 
-  event.campfireCooking("kubejs:stone_pebble", "kubejs:cobblestone_pebble");
-  event.campfireCooking("kubejs:dirt_pile", "kubejs:organic_pile");
+  event.campfireCooking("zodiac:stone_pebble", "zodiac:cobblestone_pebble");
+  event.campfireCooking("zodiac:dirt_pile", "zodiac:organic_pile");
 
   less(
-    ["kubejs:small_azalea_roots", "kubejs:small_azalea_leaf"],
-    "2x kubejs:organic_pile"
+    ["zodiac:small_azalea_roots", "zodiac:small_azalea_leaf"],
+    "2x zodiac:organic_pile"
   );
 
   rstick(
@@ -239,7 +229,7 @@ ServerEvents.recipes((event) => {
     "aquaculture:wooden_fillet_knife"
   );
 
-  rstick(["kubejs:composter", "aquaculture:driftwood"], "enderio:fluid_tank");
+  rstick(["zodiac:composter", "aquaculture:driftwood"], "enderio:fluid_tank");
 
   rstick(
     ["enderio:fluid_tank", "aquaculture:driftwood"],
@@ -250,7 +240,7 @@ ServerEvents.recipes((event) => {
   less("minecraft:clay", "4x minecraft:clay_ball");
 
   rstick(
-    ["kubejs:barrel", "aquaculture:driftwood"],
+    ["zodiac:barrel", "aquaculture:driftwood"],
     "terraqueous:apple_barrel"
   );
 
@@ -262,19 +252,19 @@ ServerEvents.recipes((event) => {
       "minecraft:clay",
       "minecraft:clay",
     ],
-    "kubejs:stone_casing"
+    "zodiac:stone_casing"
   );
 
   less(
     [
-      "kubejs:stone_casing",
+      "zodiac:stone_casing",
       "aquaculture:driftwood",
       "terraqueous:apple_barrel",
     ],
     "terraqueous:craftbench"
   );
   less(
-    ["kubejs:stone_casing", "aquaculture:driftwood", "kubejs:composter"],
+    ["zodiac:stone_casing", "aquaculture:driftwood", "zodiac:composter"],
     "terraqueous:craftfurnace"
   );
 

@@ -287,7 +287,7 @@ JEIAddedEvents.registerCategories((event) => {
           52
         )
       )
-      .icon(guiHelper.createDrawableItemStack("kubejs:azalea_seed"))
+      .icon(guiHelper.createDrawableItemStack("zodiac:azalea_seed"))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -368,7 +368,7 @@ JEIAddedEvents.registerCategories((event) => {
           92
         )
       )
-      .icon(guiHelper.createDrawableItemStack(Item.of("kubejs:composter")))
+      .icon(guiHelper.createDrawableItemStack(Item.of("zodiac:composter")))
       //---------------------------------------------------------------------//
       //                            SLOT VALIDATOR                           //
       //---------------------------------------------------------------------//
@@ -487,8 +487,8 @@ JEIAddedEvents.registerCategories((event) => {
 });
 
 JEIAddedEvents.registerRecipeCatalysts((event) => {
-  event.data.addRecipeCatalyst("kubejs:composter", "zodiac:composting");
-  event.data.addRecipeCatalyst("kubejs:barrel", "zodiac:barrel-mixing");
+  event.data.addRecipeCatalyst("zodiac:composter", "zodiac:composting");
+  event.data.addRecipeCatalyst("zodiac:barrel", "zodiac:barrel-mixing");
 });
 
 JEIAddedEvents.registerRecipes((event) => {
@@ -496,13 +496,13 @@ JEIAddedEvents.registerRecipes((event) => {
   //azalea click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: "kubejs:azalea_seeds",
+      main_hand: "zodiac:azalea_seeds",
       off_hand: "",
       block: "minecraft:flower_pot",
       extra: "",
     },
     output: {
-      block_replace: "kubejs:azalea_seed",
+      block_replace: "zodiac:azalea_seed",
       drop: [],
       chance: [],
       isCrouching: false,
@@ -513,13 +513,13 @@ JEIAddedEvents.registerRecipes((event) => {
   //carrot click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: "kubejs:carrot_seeds",
+      main_hand: "zodiac:carrot_seeds",
       off_hand: "",
       block: "minecraft:flower_pot",
       extra: "",
     },
     output: {
-      block_replace: "kubejs:carrot_seed",
+      block_replace: "zodiac:carrot_seed",
       drop: [],
       chance: [],
       isCrouching: false,
@@ -530,14 +530,14 @@ JEIAddedEvents.registerRecipes((event) => {
   //firepit click
   event.custom("zodiac:click-event").add({
     input: {
-      main_hand: "kubejs:fire_starter",
+      main_hand: "zodiac:fire_starter",
       off_hand: "",
-      block: "kubejs:firepit",
+      block: "zodiac:firepit",
       extra: "unlit",
     },
     output: {
-      block_replace: "kubejs:firepit",
-      drop: ['minecraft:charcoal', 'kubejs:ash'],
+      block_replace: "zodiac:firepit",
+      drop: ['minecraft:charcoal', 'zodiac:ash'],
       chance: [75,50],
       isCrouching: false,
       extra: "lit",
@@ -546,8 +546,8 @@ JEIAddedEvents.registerRecipes((event) => {
 
   //rooted dirt
   event.custom("zodiac:random-tick-below").add({
-    input: { top: "kubejs:azalea_seed", below: "minecraft:dirt" },
-    output: { top: "kubejs:azalea_seed", below: "minecraft:rooted_dirt" },
+    input: { top: "zodiac:azalea_seed", below: "minecraft:dirt" },
+    output: { top: "zodiac:azalea_seed", below: "minecraft:rooted_dirt" },
   });
 
   //bottle-mud click

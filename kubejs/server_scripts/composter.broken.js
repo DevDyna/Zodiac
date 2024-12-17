@@ -1,4 +1,4 @@
-BlockEvents.broken("kubejs:composter", (event) => {
+BlockEvents.broken("zodiac:composter", (event) => {
   if (event.block.properties.get("mature").toLowerCase() == "true") {
     global.jei.recipes.composting[
       Number(event.block.properties.get("type").toLowerCase())-1

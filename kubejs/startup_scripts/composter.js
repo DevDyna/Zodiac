@@ -2,7 +2,7 @@ StartupEvents.registry("block", (event) => {
   let $recipe = global.jei.recipes.composting;
 
   event
-    .create("kubejs:composter")
+    .create("zodiac:composter")
     .property($BooleanProperty.create("composting"))
     .property($BooleanProperty.create("mature"))
     .property($IntegerProperty.create("stage", 0, 3))

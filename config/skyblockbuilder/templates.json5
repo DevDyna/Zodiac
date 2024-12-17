@@ -19,12 +19,12 @@
   
   "spawns": {
     "default": {
+      "east": [],
+      "west": [],
+      "north": [],
       "south": [
         [ 6, 3, 5 ]
-      ],
-      "north": [],
-      "west": [],
-      "east": []
+      ]
     }
   },
   
@@ -50,9 +50,11 @@
   // The list of templates being available. The first entry is the default template.
   "templates": [
     {
-      "name": "Zodiac Main Island",
-      "file": "main_demo_noobelisk.nbt",
-      "spawns": "default"
+      "name": "default",
+      "file": "default.nbt",
+      "spawns": "default",
+      "surroundingBlocks": "default",
+      "spreads": "default"
     }
   ]
 }
